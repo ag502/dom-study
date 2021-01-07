@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>노드 개요</title>
+</head>
+<body>
+    <a href="#">HI</a>
+    <script>
+        for (let key in Node) {
+            console.log(`${key} = ${Node[key]}`)
+        }
+
+        const nodeAnchor = document.querySelector('a')
+        const props = []
+
+        for (const key in nodeAnchor) {
+            props.push(key)
+        }
+
+        console.log(props.sort())
+    </script>
+</body>
+</html>
