@@ -63,3 +63,9 @@ DOM 트리의 노드개체는 Node로 부터 속성과 메서드를 상속받는
     * children ..
 * HTML element 메서드
     * insertAdjacentHTML() ..
+  
+##1-5 노드의 유형과 이름 식별하기
+
+---
+
+모든 노드는 Node로부터 상속받은 nodeType, nodeName 속성을 가진다

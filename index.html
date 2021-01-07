@@ -7,18 +7,27 @@
 <body>
     <a href="#">HI</a>
     <script>
-        for (let key in Node) {
-            console.log(`${key} = ${Node[key]}`)
-        }
+        // for (let key in Node) {
+        //     console.log(`${key} = ${Node[key]}`)
+        // }
+        //
+        // const nodeAnchor = document.querySelector('a')
+        // const props = []
+        //
+        // for (const key in nodeAnchor) {
+        //     props.push(key)
+        // }
+        //
+        // console.log(props.sort())
 
-        const nodeAnchor = document.querySelector('a')
-        const props = []
+        /** 노드의 유형과 이름 식별하기 **/
+        console.log(Node.DOCUMENT_TYPE_NODE, document.doctype.nodeType, document.doctype.nodeName)
+        console.log(Node.DOCUMENT_NODE, document.nodeType, document.nodeName)
+        console.log(Node.DOCUMENT_FRAGMENT_NODE, document.createDocumentFragment().nodeType, document.createDocumentFragment().nodeName)
+        console.log(Node.ELEMENT_NODE, document.querySelector("a").nodeType, document.querySelector("a").nodeName)
+        console.log(Node.TEXT_NODE, document.querySelector("a").firstChild.nodeType, document.querySelector("a").firstChild.nodeName)
 
-        for (const key in nodeAnchor) {
-            props.push(key)
-        }
-
-        console.log(props.sort())
+        console.log(document.querySelector("a").nodeType === Node.ELEMENT_NODE)
     </script>
 </body>
 </html>
