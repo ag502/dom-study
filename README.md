@@ -69,3 +69,11 @@ DOM 트리의 노드개체는 Node로 부터 속성과 메서드를 상속받는
 ---
 
 모든 노드는 Node로부터 상속받은 nodeType, nodeName 속성을 가진다
+
+##1-6
+
+---
+
+nodeValue속성은 Text와 Comment 노드를 제외한 대부분 노드에서 null값을 반환. <br>
+Text와 Comment노드에서 실제 텍스트 문자열을 추출하기 위해 사용 <br>
+nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 있다.

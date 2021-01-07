@@ -21,13 +21,22 @@
         // console.log(props.sort())
 
         /** 노드의 유형과 이름 식별하기 **/
-        console.log(Node.DOCUMENT_TYPE_NODE, document.doctype.nodeType, document.doctype.nodeName)
-        console.log(Node.DOCUMENT_NODE, document.nodeType, document.nodeName)
-        console.log(Node.DOCUMENT_FRAGMENT_NODE, document.createDocumentFragment().nodeType, document.createDocumentFragment().nodeName)
-        console.log(Node.ELEMENT_NODE, document.querySelector("a").nodeType, document.querySelector("a").nodeName)
-        console.log(Node.TEXT_NODE, document.querySelector("a").firstChild.nodeType, document.querySelector("a").firstChild.nodeName)
+        // console.log(Node.DOCUMENT_TYPE_NODE, document.doctype.nodeType, document.doctype.nodeName)
+        // console.log(Node.DOCUMENT_NODE, document.nodeType, document.nodeName)
+        // console.log(Node.DOCUMENT_FRAGMENT_NODE, document.createDocumentFragment().nodeType, document.createDocumentFragment().nodeName)
+        // console.log(Node.ELEMENT_NODE, document.querySelector("a").nodeType, document.querySelector("a").nodeName)
+        // console.log(Node.TEXT_NODE, document.querySelector("a").firstChild.nodeType, document.querySelector("a").firstChild.nodeName)
+        //
+        // console.log(document.querySelector("a").nodeType === Node.ELEMENT_NODE)
 
-        console.log(document.querySelector("a").nodeType === Node.ELEMENT_NODE)
+        /** 노드 값 가져오기 **/
+        console.log(document.doctype.nodeValue)
+        console.log(document.nodeValue)
+        console.log(document.createDocumentFragment().nodeValue)
+        console.log(document.querySelector("a").nodeValue)
+
+        console.log(document.querySelector("a").firstChild.nodeValue)
+        document.querySelector("a").firstChild.nodeValue = "HELLO"
     </script>
 </body>
 </html>
