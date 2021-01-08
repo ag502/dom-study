@@ -83,3 +83,14 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
 ---
 
 `createElement()` `createTextNode()` 들을 이용해 `elementNode`와 `textNode`를 생성할 수 있다.
+
+## 1-8 JavaScript 문자열을 사용하여 DOM에 Element 및 Text 노드를 생성 및 추가하기
+
+---
+
+`innerHTML` `outerHTML` `textContent` `insertAdjacentHTML()` 를 이용해 문자열을 사용하여 DOM에 노드를 생성 할 수 있다.
+
+* textContent vs innerText
+  > textContent는 숨겨진 요소, `<script>`, `<style>` 요소를 포함한 모든 요소의 컨텐츠를 가져옴. <br>
+  > innerText는 rendered된 내용만 가져옴 <br>
+  > innerText는 layout정보를 알아야하기 때문에 비용이 좀 더 비쌈.
