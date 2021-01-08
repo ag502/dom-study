@@ -94,3 +94,10 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
   > textContent는 숨겨진 요소, `<script>`, `<style>` 요소를 포함한 모든 요소의 컨텐츠를 가져옴. <br>
   > innerText는 rendered된 내용만 가져옴 <br>
   > innerText는 layout정보를 알아야하기 때문에 비용이 좀 더 비쌈.
+  > 
+
+## 1-9 DOM 트리의 일부를 JavaScript 문자열로 추출하기
+
+---
+
+`innerText` `outerText` `textContent`를 사용하여 문자열을 추출할 수 있다.

@@ -10,19 +10,20 @@
     </style>
 </head>
 <body>
-    <a href="#">HI</a>
+<!--    <a href="#">HI</a>-->
 
-    <div id="A"></div>
-    <span id="B"></span>
-    <div id="C"></div>
-    <div id="D"></div>
-    <div id="E"></div>
+<!--    <div id="A"></div>-->
+<!--    <span id="B"></span>-->
+<!--    <div id="C"></div>-->
+<!--    <div id="D"></div>-->
+<!--    <div id="E"></div>-->
 
-    <div id="t"><div>lions,
-        tigers</div><div style="visibility:hidden">and bears</div></div>
+<!--    <div id="t"><div>lions,-->
+<!--        tigers</div><div style="visibility:hidden">and bears</div></div>-->
 
-    <i id="elm">how</i>
-
+<!--    <i id="elm">how</i>-->
+    <div id="A"><i>Hi</i></div>
+    <div id="B">Dude<strong> !</strong></div>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -63,27 +64,38 @@
         // console.log(textNode, textNode.nodeType)
 
         /** 문자열을 사용하여 노드 생성 및 추가 하기 **/
-        console.log(document.querySelector("#A").innerHTML)
-        document.querySelector("#A").innerHTML = '<strong>HI</strong>'
+        // console.log(document.querySelector("#A").innerHTML)
+        // document.querySelector("#A").innerHTML = '<strong>HI</strong>'
+        //
+        // console.log(document.querySelector("#B"))
+        // document.querySelector("#B").outerHTML = `<div id="B">Whats Shaking</div>`
+        //
+        // console.log("-------textContent-------")
+        // console.log(document.querySelector("#t").textContent)
+        // console.log("-------innerText-------")
+        // console.log(document.querySelector("#t").innerText)
+        //
+        // document.querySelector("#C").textContent = 'dude'
+        // document.querySelector("#D").innerText = "keep it~"
+        //
+        // document.querySelector("#E").outerText = "real!"
 
-        console.log(document.querySelector("#B"))
-        document.querySelector("#B").outerHTML = `<div id="B">Whats Shaking</div>`
+        // const elm = document.getElementById("elm")
+        // elm.insertAdjacentHTML("beforebegin", "<span>Hey-</span>")
+        // elm.insertAdjacentHTML("afterbegin", "<span>Dude</span>")
+        // elm.insertAdjacentHTML("beforeend", "<span>-are</span>")
+        // elm.insertAdjacentHTML("afterend", "<span>-you?</span>")
 
-        console.log("-------textContent-------")
-        console.log(document.querySelector("#t").textContent)
-        console.log("-------innerText-------")
-        console.log(document.querySelector("#t").innerText)
+        /** DOM트리의 일부를 문자열로 추출 하기 **/
+        const divA = document.querySelector("#A")
+        const divB = document.querySelector("#B")
 
-        document.querySelector("#C").textContent = 'dude'
-        document.querySelector("#D").innerText = "keep it~"
+        console.log(divA.innerHTML)
+        console.log(divA.outerHTML)
 
-        document.querySelector("#E").outerText = "real!"
-
-        const elm = document.getElementById("elm")
-        elm.insertAdjacentHTML("beforebegin", "<span>Hey-</span>")
-        elm.insertAdjacentHTML("afterbegin", "<span>Dude</span>")
-        elm.insertAdjacentHTML("beforeend", "<span>-are</span>")
-        elm.insertAdjacentHTML("afterend", "<span>-you?</span>")
+        console.log(divB.textContent)
+        console.log(divB.innerText)
+        console.log(divB.outerText)
     </script>
 </body>
 </html>
