@@ -30,13 +30,20 @@
         // console.log(document.querySelector("a").nodeType === Node.ELEMENT_NODE)
 
         /** 노드 값 가져오기 **/
-        console.log(document.doctype.nodeValue)
-        console.log(document.nodeValue)
-        console.log(document.createDocumentFragment().nodeValue)
-        console.log(document.querySelector("a").nodeValue)
+        // console.log(document.doctype.nodeValue)
+        // console.log(document.nodeValue)
+        // console.log(document.createDocumentFragment().nodeValue)
+        // console.log(document.querySelector("a").nodeValue)
+        //
+        // console.log(document.querySelector("a").firstChild.nodeValue)
+        // document.querySelector("a").firstChild.nodeValue = "HELLO"
 
-        console.log(document.querySelector("a").firstChild.nodeValue)
-        document.querySelector("a").firstChild.nodeValue = "HELLO"
+        /** 노드 생성하기 **/
+        const elementNode = document.createElement("div")
+        console.log(elementNode, elementNode.nodeType)
+
+        const textNode = document.createTextNode("hi")
+        console.log(textNode, textNode.nodeType)
     </script>
 </body>
 </html>
