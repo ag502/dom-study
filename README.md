@@ -126,7 +126,16 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
   > Array.from(유사 배열 객체)를 사용하여 변환
   
 ## 1-16 DOM 내의 노드 탐색
+
   * `parentNode`, `firstChild`, `lastChild`, `nextSilbing`, `previousSibling`, `childNodes`
     > textNode, commentNode 포함 모든 노드 요소들을 반환
   * `parentElement`, `firstElementChild`, `lastElementChild`, `nextElementSibling`, `previousElementSibling`, `children`
     > elementNode들만 반환
+    
+## 3-1 HTML * Element 개체 개요
+
+DOM에서 각 element가 고유한 JavaScript 인터페이스/생성자를 통해 만들어 진다.
+
+## 3-1 Element 생성
+
+`createElement()`를 이용해 동적으로 DOM에 `ElementNode`를 추가할 수 있다.
