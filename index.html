@@ -5,7 +5,8 @@
     <title>Element 노드</title>
 </head>
 <body>
-    <a href="#">Hi</a>
+<!--    <a href="#">Hi</a>-->
+    <a title="title" href="#" data-foo="dataFoo" class="yes" style="margin:0;" foo="boo"></a>
     <script>
         /** element 노드 개요 **/
         // const anchor = document.querySelector("a")
@@ -18,9 +19,16 @@
         // console.log(document.querySelector("textarea"))
 
         /** Element 태그의 이름 얻기 **/
-        const $a = document.querySelector("a")
-        console.log($a.tagName)
-        console.log($a.nodeName)
+        // const $a = document.querySelector("a")
+        // console.log($a.tagName)
+        // console.log($a.nodeName)
+
+        /** Attributes 및 값에 대한 리스트/컬렉션 얻기 **/
+        const attributes = document.querySelector("a").attributes;
+        console.log(attributes)
+        for (let i = 0; i < attributes.length; i++) {
+            console.log(`${attributes[i].nodeName} = ${attributes[i].nodeValue}`)
+        }
     </script>
 </body>
 </html>
