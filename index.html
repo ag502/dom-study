@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--    <a href="#">Hi</a>-->
-    <a title="title" href="#" data-foo="dataFoo" class="yes" style="margin:0;" foo="boo"></a>
+    <a href="#" title="title"  data-foo="dataFoo" class="yes no" style="margin:0;" foo="boo" hidden="hidden">#link</a>
     <script>
         /** element 노드 개요 **/
         // const anchor = document.querySelector("a")
@@ -24,11 +24,45 @@
         // console.log($a.nodeName)
 
         /** Attributes 및 값에 대한 리스트/컬렉션 얻기 **/
-        const attributes = document.querySelector("a").attributes;
-        console.log(attributes)
-        for (let i = 0; i < attributes.length; i++) {
-            console.log(`${attributes[i].nodeName} = ${attributes[i].nodeValue}`)
-        }
+        // const attributes = document.querySelector("a").attributes;
+        // console.log(attributes)
+        // for (let i = 0; i < attributes.length; i++) {
+        //     console.log(`${attributes[i].nodeName} = ${attributes[i].nodeValue}`)
+        // }
+
+        /** Element의 Attribute 값 획득, 설정, 제거 **/
+        const $a = document.querySelector("a")
+
+        // 제거
+        $a.removeAttribute("href")
+        $a.removeAttribute("title")
+        $a.removeAttribute("style")
+        $a.removeAttribute("data-foo")
+        $a.removeAttribute("class")
+        $a.removeAttribute("foo")
+        $a.removeAttribute("hidden")
+
+        console.log($a.attributes)
+
+        // 설정
+        $a.setAttribute("href", "#")
+        $a.setAttribute("title", "title")
+        $a.setAttribute("style", "margin:0;")
+        $a.setAttribute("data-foo", "dataFoo")
+        $a.setAttribute("class", "yes no")
+        $a.setAttribute("foo", "boo")
+        $a.setAttribute("hidden", "hidden")
+
+        console.log($a.attributes)
+
+        // 가져오기
+        console.log($a.getAttribute("href"))
+        console.log($a.getAttribute("title"))
+        console.log($a.getAttribute("style"))
+        console.log($a.getAttribute("data-foo"))
+        console.log($a.getAttribute("class"))
+        console.log($a.getAttribute("foo"))
+        console.log($a.getAttribute("hidden"))
     </script>
 </body>
 </html>

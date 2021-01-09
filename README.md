@@ -144,6 +144,15 @@ DOM에서 각 element가 고유한 JavaScript 인터페이스/생성자를 통�
 
 `tagName`속성을 사용하여 element이름에 접근 가능 (node의 `nodeName`과 동일한 결과 반환)
 
-## 3-3 Elementd의 Attribute 및 값에 대한 리스트/컬렉션 얻기
+## 3-3 Element의 Attribute 및 값에 대한 리스트/컬렉션 얻기
 
 attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 컬렉션을 얻을 수 있다(NamedNodeMap(attribute node 리스트)을 반환)
+
+## 3-4 Element의 Attribute 값 획득, 설정, 제거
+
+  * 획득
+    > `getAttribute()`
+  * 설정
+    > `setAttribute()`
+  * 제거
+    > `removeAttribute()`
