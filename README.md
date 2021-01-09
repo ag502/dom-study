@@ -119,3 +119,8 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
 ## 1-14 직계 자식 노드 전부에 대한 리스트/컬렉션 얻기
 
 `childNodes`속성을 사용하면 직계 자식 노드에 대해 배열 형태의 리스트(NodeList)가 나온다.
+
+## 1-15 NodeList나 HTMLCollection을 JavaScrip 배열로 변환
+
+`NodeList`와 `HTMLCollection`은 배열이 아니므로 배열과 관련된 함수 사용 불가
+  > Array.from(유사 배열 객체)를 사용하여 변환

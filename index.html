@@ -34,10 +34,12 @@
 <!--    <div id="A">Hi</div>-->
 <!--    <div id="B">Dude</div>-->
 
-    <ul>
-        <li>Hi</li>
-        <li>there</li>
-    </ul>
+<!--    <ul>-->
+<!--        <li>Hi</li>-->
+<!--        <li>there</li>-->
+<!--    </ul>-->
+
+        <a href="#"></a>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -146,9 +148,19 @@
         // console.log(withChildUl)
 
         /** 직계 자식 노드 전부에 대한 컬렉션 얻기 **/
-        const ulElementChildNodes = document.querySelector("ul").childNodes
-        console.log(ulElementChildNodes)
-        ulElementChildNodes.forEach((item) => console.log(item))
+        // const ulElementChildNodes = document.querySelector("ul").childNodes
+        // console.log(ulElementChildNodes)
+        // ulElementChildNodes.forEach((item) => console.log(item))
+
+        /** 노드 컬렉션 배열로 변환 **/
+        const linkHTMLCollection = document.links
+        const linkNodeList = document.querySelectorAll("a")
+
+        console.log(Array.isArray(linkHTMLCollection))
+        console.log(Array.isArray(linkNodeList))
+
+        console.log(Array.from(linkHTMLCollection))
+        console.log(Array.from(linkNodeList))
     </script>
 </body>
 </html>
