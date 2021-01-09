@@ -124,3 +124,9 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
 
 `NodeList`와 `HTMLCollection`은 배열이 아니므로 배열과 관련된 함수 사용 불가
   > Array.from(유사 배열 객체)를 사용하여 변환
+  
+## 1-16 DOM 내의 노드 탐색
+  * `parentNode`, `firstChild`, `lastChild`, `nextSilbing`, `previousSibling`, `childNodes`
+    > textNode, commentNode 포함 모든 노드 요소들을 반환
+  * `parentElement`, `firstElementChild`, `lastElementChild`, `nextElementSibling`, `previousElementSibling`, `children`
+    > elementNode들만 반환

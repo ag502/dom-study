@@ -39,7 +39,12 @@
 <!--        <li>there</li>-->
 <!--    </ul>-->
 
-        <a href="#"></a>
+<!--        <a href="#"></a>-->
+    <ul><!-- comment -->
+        <li id="A">foo</li>
+        <li id="B">bar</li>
+        <!-- comment -->
+    </ul>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -153,14 +158,41 @@
         // ulElementChildNodes.forEach((item) => console.log(item))
 
         /** 노드 컬렉션 배열로 변환 **/
-        const linkHTMLCollection = document.links
-        const linkNodeList = document.querySelectorAll("a")
+        // const linkHTMLCollection = document.links
+        // const linkNodeList = document.querySelectorAll("a")
+        //
+        // console.log(Array.isArray(linkHTMLCollection))
+        // console.log(Array.isArray(linkNodeList))
+        //
+        // console.log(Array.from(linkHTMLCollection))
+        // console.log(Array.from(linkNodeList))
 
-        console.log(Array.isArray(linkHTMLCollection))
-        console.log(Array.isArray(linkNodeList))
+        /** DOM내의 노드 탐색 **/
+        const ulElement = document.querySelector("ul")
 
-        console.log(Array.from(linkHTMLCollection))
-        console.log(Array.from(linkNodeList))
+        console.log("---ul의 부모 노드는?")
+        console.log(ulElement.parentNode.nodeName)
+        console.log(ulElement.parentElement.nodeName)
+
+        console.log("---ul의 첫번째 자식은?")
+        console.log(ulElement.firstChild.nodeName)
+        console.log(ulElement.firstElementChild.nodeName)
+
+        console.log("---ul의 마지막 자식은?")
+        console.log(ulElement.lastChild.nodeName)
+        console.log(ulElement.lastElementChild.nodeName)
+
+        console.log("---첫번째 li의 nextSibling은?")
+        console.log(document.querySelector("#A").nextSibling.nodeName)
+        console.log(document.querySelector("#A").nextElementSibling.nodeName)
+
+        console.log("---마지막 li의 nextSibling은?")
+        console.log(document.querySelector("#B").previousSibling.nodeName)
+        console.log(document.querySelector("#B").previousElementSibling.nodeName)
+
+        console.log("---ul의 자식 node 컬렉션")
+        console.log(ulElement.childNodes)
+        console.log(ulElement.children)
     </script>
 </body>
 </html>
