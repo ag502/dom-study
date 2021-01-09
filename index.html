@@ -22,14 +22,17 @@
 <!--        tigers</div><div style="visibility:hidden">and bears</div></div>-->
 
 <!--    <i id="elm">how</i>-->
-    <div id="A"><i>Hi</i></div>
-    <div id="B">Dude<strong> !</strong></div>
-    <p>Hi</p>
+<!--    <div id="A"><i>Hi</i></div>-->
+<!--    <div id="B">Dude<strong> !</strong></div>-->
+<!--    <p>Hi</p>-->
 
-    <ul>
-        <li>2</li>
-        <li>3</li>
-    </ul>
+<!--    <ul>-->
+<!--        <li>2</li>-->
+<!--        <li>3</li>-->
+<!--    </ul>-->
+
+    <div id="A">Hi</div>
+    <div id="B">Dude</div>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -104,22 +107,30 @@
         // console.log(divB.outerText)
 
         /** appendChild, insertBefore를 이용하여 노드를 DOM에 추가하기 **/
-        const strongElement = document.createElement("strong")
-        const textNode = document.createTextNode("dude")
-        // strongElement.innerText = "dude"
+        // const strongElement = document.createElement("strong")
+        // const textNode = document.createTextNode("dude")
+        // // strongElement.innerText = "dude"
+        //
+        // strongElement.appendChild(textNode)
+        // const pElement = document.querySelector("p")
+        // pElement.appendChild(strongElement)
+        //
+        // const liElement = document.createElement("li")
+        // liElement.innerText = "1"
+        //
+        // const ulElement = document.querySelector("ul")
+        // ulElement.insertBefore(liElement, ulElement.firstChild)
+        //
+        // pElement.insertBefore(ulElement, pElement.firstChild)
+        // pElement.appendChild(ulElement)
 
-        strongElement.appendChild(textNode)
-        const pElement = document.querySelector("p")
-        pElement.appendChild(strongElement)
+        /** removeChild(), replaceChild()를 이용하여 노드를 제거하거나 바꾸기 **/
+        const divA = document.querySelector("#A")
+        // divA.parentNode.removeChild(divA)
 
-        const liElement = document.createElement("li")
-        liElement.innerText = "1"
-
-        const ulElement = document.querySelector("ul")
-        ulElement.insertBefore(liElement, ulElement.firstChild)
-
-        pElement.insertBefore(ulElement, pElement.firstChild)
-        pElement.appendChild(ulElement)
+        const spanElement = document.createElement("span")
+        spanElement.innerText = 'Howdy'
+        divA.parentElement.replaceChild(spanElement, divA)
     </script>
 </body>
 </html>
