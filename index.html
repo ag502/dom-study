@@ -138,12 +138,17 @@
         // divA.parentElement.replaceChild(spanElement, divA)
 
         /** cloneNode()를 사용하여 노드 복제 **/
-        const ulElement = document.querySelector("ul")
-        const onlyUl = ulElement.cloneNode()
-        const withChildUl = ulElement.cloneNode(true)
+        // const ulElement = document.querySelector("ul")
+        // const onlyUl = ulElement.cloneNode()
+        // const withChildUl = ulElement.cloneNode(true)
+        //
+        // console.log(onlyUl)
+        // console.log(withChildUl)
 
-        console.log(onlyUl)
-        console.log(withChildUl)
+        /** 직계 자식 노드 전부에 대한 컬렉션 얻기 **/
+        const ulElementChildNodes = document.querySelector("ul").childNodes
+        console.log(ulElementChildNodes)
+        ulElementChildNodes.forEach((item) => console.log(item))
     </script>
 </body>
 </html>
