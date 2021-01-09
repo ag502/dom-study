@@ -177,3 +177,9 @@ attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 �
 ## 3-11 Class attribute 값이 특정 값을 가지고 있는지 판별하기
 
 `classList.contains()` 메서드를 사용하면 class attribute 값 포함여부 알 수 있다.
+
+## 3-12 data-* attribute를 가져오고 설정하기
+
+element 노드의 `dataset` 속성은 element에서 data-*로 시작하는 모든 attribute를 가진 개체를 제공한다.
+  > dataset은 data attribute들의 camelCase 버전을 가지고 있다. </br>
+  > data-foo-foo -> fooFoo

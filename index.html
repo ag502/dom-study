@@ -81,19 +81,25 @@
         // console.log($a.className)
 
         /** Class Attribute에 하위 값 추가 및 제거, 토클, 확인 **/
+        // const $a = document.querySelector("a")
+        // $a.classList.add("neutral")
+        // console.log($a.classList)
+        //
+        // $a.classList.remove("no")
+        // console.log($a.classList)
+        //
+        // $a.classList.toggle("no")
+        // console.log($a.classList)
+        // $a.classList.toggle("yes")
+        // console.log($a.classList)
+        //
+        // console.log($a.classList.contains("hi"))
+
+        /** dataset attribute 가져오고 설정하기 **/
         const $a = document.querySelector("a")
-        $a.classList.add("neutral")
-        console.log($a.classList)
+        console.log($a.dataset.foo)
 
-        $a.classList.remove("no")
-        console.log($a.classList)
-
-        $a.classList.toggle("no")
-        console.log($a.classList)
-        $a.classList.toggle("yes")
-        console.log($a.classList)
-
-        console.log($a.classList.contains("hi"))
+        $a.dataset.gooGoo = "goo"
     </script>
 </body>
 </html>
