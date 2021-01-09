@@ -31,8 +31,13 @@
 <!--        <li>3</li>-->
 <!--    </ul>-->
 
-    <div id="A">Hi</div>
-    <div id="B">Dude</div>
+<!--    <div id="A">Hi</div>-->
+<!--    <div id="B">Dude</div>-->
+
+    <ul>
+        <li>Hi</li>
+        <li>there</li>
+    </ul>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -125,12 +130,20 @@
         // pElement.appendChild(ulElement)
 
         /** removeChild(), replaceChild()를 이용하여 노드를 제거하거나 바꾸기 **/
-        const divA = document.querySelector("#A")
-        // divA.parentNode.removeChild(divA)
+        // const divA = document.querySelector("#A")
+        // // divA.parentNode.removeChild(divA)
+        //
+        // const spanElement = document.createElement("span")
+        // spanElement.innerText = 'Howdy'
+        // divA.parentElement.replaceChild(spanElement, divA)
 
-        const spanElement = document.createElement("span")
-        spanElement.innerText = 'Howdy'
-        divA.parentElement.replaceChild(spanElement, divA)
+        /** cloneNode()를 사용하여 노드 복제 **/
+        const ulElement = document.querySelector("ul")
+        const onlyUl = ulElement.cloneNode()
+        const withChildUl = ulElement.cloneNode(true)
+
+        console.log(onlyUl)
+        console.log(withChildUl)
     </script>
 </body>
 </html>
