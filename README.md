@@ -156,3 +156,8 @@ attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 �
     > `setAttribute()`
   * 제거
     > `removeAttribute()`
+    
+## 3-5 Element가 특정 attribute을 가지고 있는지 판단하기
+  
+`hasAttribute()`를 이용하여 포함 여부 확인 가능(값이 정의되지 않은 attr라도 참 반환)
+  > Boolean attribute의 경우 boolean응답을 받을 수 있다. (`cheackbok`의 체크여부 확인)

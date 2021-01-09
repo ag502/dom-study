@@ -6,7 +6,8 @@
 </head>
 <body>
 <!--    <a href="#">Hi</a>-->
-    <a href="#" title="title"  data-foo="dataFoo" class="yes no" style="margin:0;" foo="boo" hidden="hidden">#link</a>
+    <a href="#" title="title"  data-foo="dataFoo" class="yes no" style="margin:0;" foo="boo" hidden="hidden" goo>#link</a>
+    <input type="checkbox" checked/>
     <script>
         /** element 노드 개요 **/
         // const anchor = document.querySelector("a")
@@ -31,38 +32,47 @@
         // }
 
         /** Element의 Attribute 값 획득, 설정, 제거 **/
+        // const $a = document.querySelector("a")
+        //
+        // // 제거
+        // $a.removeAttribute("href")
+        // $a.removeAttribute("title")
+        // $a.removeAttribute("style")
+        // $a.removeAttribute("data-foo")
+        // $a.removeAttribute("class")
+        // $a.removeAttribute("foo")
+        // $a.removeAttribute("hidden")
+        //
+        // console.log($a.attributes)
+        //
+        // // 설정
+        // $a.setAttribute("href", "#")
+        // $a.setAttribute("title", "title")
+        // $a.setAttribute("style", "margin:0;")
+        // $a.setAttribute("data-foo", "dataFoo")
+        // $a.setAttribute("class", "yes no")
+        // $a.setAttribute("foo", "boo")
+        // $a.setAttribute("hidden", "hidden")
+        //
+        // console.log($a.attributes)
+        //
+        // // 가져오기
+        // console.log($a.getAttribute("href"))
+        // console.log($a.getAttribute("title"))
+        // console.log($a.getAttribute("style"))
+        // console.log($a.getAttribute("data-foo"))
+        // console.log($a.getAttribute("class"))
+        // console.log($a.getAttribute("foo"))
+        // console.log($a.getAttribute("hidden"))
+
+        /** Element가 특정 attribute를 가지고 있는지 확인하기 **/
         const $a = document.querySelector("a")
-
-        // 제거
-        $a.removeAttribute("href")
-        $a.removeAttribute("title")
-        $a.removeAttribute("style")
-        $a.removeAttribute("data-foo")
-        $a.removeAttribute("class")
-        $a.removeAttribute("foo")
-        $a.removeAttribute("hidden")
-
-        console.log($a.attributes)
-
-        // 설정
-        $a.setAttribute("href", "#")
-        $a.setAttribute("title", "title")
-        $a.setAttribute("style", "margin:0;")
-        $a.setAttribute("data-foo", "dataFoo")
-        $a.setAttribute("class", "yes no")
-        $a.setAttribute("foo", "boo")
-        $a.setAttribute("hidden", "hidden")
-
-        console.log($a.attributes)
-
-        // 가져오기
-        console.log($a.getAttribute("href"))
-        console.log($a.getAttribute("title"))
-        console.log($a.getAttribute("style"))
-        console.log($a.getAttribute("data-foo"))
-        console.log($a.getAttribute("class"))
-        console.log($a.getAttribute("foo"))
-        console.log($a.getAttribute("hidden"))
+        console.log(
+            $a.hasAttribute("href"),
+            $a.hasAttribute("id"),
+            $a.hasAttribute("goo")
+        )
+        console.log(document.querySelector("input").hasAttribute("checked"))
     </script>
 </body>
 </html>
