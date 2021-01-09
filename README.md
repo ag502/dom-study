@@ -126,7 +126,60 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
   > Array.from(유사 배열 객체)를 사용하여 변환
   
 ## 1-16 DOM 내의 노드 탐색
+
   * `parentNode`, `firstChild`, `lastChild`, `nextSilbing`, `previousSibling`, `childNodes`
     > textNode, commentNode 포함 모든 노드 요소들을 반환
   * `parentElement`, `firstElementChild`, `lastElementChild`, `nextElementSibling`, `previousElementSibling`, `children`
     > elementNode들만 반환
+    
+## 3-1 HTML * Element 개체 개요
+
+DOM에서 각 element가 고유한 JavaScript 인터페이스/생성자를 통해 만들어 진다.
+
+## 3-3 Element 생성
+
+`createElement()`를 이용해 동적으로 DOM에 `ElementNode`를 추가할 수 있다.
+
+## 3-4 Element 태그 이름 얻기
+
+`tagName`속성을 사용하여 element이름에 접근 가능 (node의 `nodeName`과 동일한 결과 반환)
+
+## 3-5 Element의 Attribute 및 값에 대한 리스트/컬렉션 얻기
+
+attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 컬렉션을 얻을 수 있다(NamedNodeMap(attribute node 리스트)을 반환)
+
+## 3-6 Element의 Attribute 값 획득, 설정, 제거
+
+  * 획득
+    > `getAttribute()`
+  * 설정
+    > `setAttribute()`
+  * 제거
+    > `removeAttribute()`
+    
+## 3-7 Element가 특정 attribute을 가지고 있는지 판단하기
+  
+`hasAttribute()`를 이용하여 포함 여부 확인 가능(값이 정의되지 않은 attr라도 참 반환)
+  > Boolean attribute의 경우 boolean응답을 받을 수 있다. (`cheackbok`의 체크여부 확인)
+  
+## 3-8 Class Attribute 값 리스트 얻기
+
+`classList` 속성을 이용하면 `className` 속성에서 반환되는 공백으로 구분된 문자열 값을 사용하는 것보다 훨씬 쉽게 class Attribute에 접근가능.
+
+## 3-9 Class Attribute에 하위 값 추가 및 제거하기
+
+`classList.add()` `classList.remove()`를 이용하여 class attribute를 간단히 편집할 수 있다.
+
+## 3-10 Class attribute 값 토글
+
+`classList.toggle()`를 이용해 class attribute를 토글 시킬 수 있다. (값이 있으면 제거, 없으면 추가)
+
+## 3-11 Class attribute 값이 특정 값을 가지고 있는지 판별하기
+
+`classList.contains()` 메서드를 사용하면 class attribute 값 포함여부 알 수 있다.
+
+## 3-12 data-* attribute를 가져오고 설정하기
+
+element 노드의 `dataset` 속성은 element에서 data-*로 시작하는 모든 attribute를 가진 개체를 제공한다.
+  > dataset은 data attribute들의 camelCase 버전을 가지고 있다. </br>
+  > data-foo-foo -> fooFoo
