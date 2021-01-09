@@ -165,3 +165,15 @@ attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 �
 ## 3-8 Class Attribute 값 리스트 얻기
 
 `classList` 속성을 이용하면 `className` 속성에서 반환되는 공백으로 구분된 문자열 값을 사용하는 것보다 훨씬 쉽게 class Attribute에 접근가능.
+
+## 3-9 Class Attribute에 하위 값 추가 및 제거하기
+
+`classList.add()` `classList.remove()`를 이용하여 class attribute를 간단히 편집할 수 있다.
+
+## 3-10 Class attribute 값 토글
+
+`classList.toggle()`를 이용해 class attribute를 토글 시킬 수 있다. (값이 있으면 제거, 없으면 추가)
+
+## 3-11 Class attribute 값이 특정 값을 가지고 있는지 판별하기
+
+`classList.contains()` 메서드를 사용하면 class attribute 값 포함여부 알 수 있다.
