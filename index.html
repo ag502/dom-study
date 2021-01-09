@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>노드 개요</title>
+    <style>
+        #C {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<!--    <a href="#">HI</a>-->
+
+<!--    <div id="A"></div>-->
+<!--    <span id="B"></span>-->
+<!--    <div id="C"></div>-->
+<!--    <div id="D"></div>-->
+<!--    <div id="E"></div>-->
+
+<!--    <div id="t"><div>lions,-->
+<!--        tigers</div><div style="visibility:hidden">and bears</div></div>-->
+
+<!--    <i id="elm">how</i>-->
+<!--    <div id="A"><i>Hi</i></div>-->
+<!--    <div id="B">Dude<strong> !</strong></div>-->
+<!--    <p>Hi</p>-->
+
+<!--    <ul>-->
+<!--        <li>2</li>-->
+<!--        <li>3</li>-->
+<!--    </ul>-->
+
+<!--    <div id="A">Hi</div>-->
+<!--    <div id="B">Dude</div>-->
+
+<!--    <ul>-->
+<!--        <li>Hi</li>-->
+<!--        <li>there</li>-->
+<!--    </ul>-->
+
+<!--        <a href="#"></a>-->
+    <ul><!-- comment -->
+        <li id="A">foo</li>
+        <li id="B">bar</li>
+        <!-- comment -->
+    </ul>
+    <script>
+        // for (let key in Node) {
+        //     console.log(`${key} = ${Node[key]}`)
+        // }
+        //
+        // const nodeAnchor = document.querySelector('a')
+        // const props = []
+        //
+        // for (const key in nodeAnchor) {
+        //     props.push(key)
+        // }
+        //
+        // console.log(props.sort())
+
+        /** 노드의 유형과 이름 식별하기 **/
+        // console.log(Node.DOCUMENT_TYPE_NODE, document.doctype.nodeType, document.doctype.nodeName)
+        // console.log(Node.DOCUMENT_NODE, document.nodeType, document.nodeName)
+        // console.log(Node.DOCUMENT_FRAGMENT_NODE, document.createDocumentFragment().nodeType, document.createDocumentFragment().nodeName)
+        // console.log(Node.ELEMENT_NODE, document.querySelector("a").nodeType, document.querySelector("a").nodeName)
+        // console.log(Node.TEXT_NODE, document.querySelector("a").firstChild.nodeType, document.querySelector("a").firstChild.nodeName)
+        //
+        // console.log(document.querySelector("a").nodeType === Node.ELEMENT_NODE)
+
+        /** 노드 값 가져오기 **/
+        // console.log(document.doctype.nodeValue)
+        // console.log(document.nodeValue)
+        // console.log(document.createDocumentFragment().nodeValue)
+        // console.log(document.querySelector("a").nodeValue)
+        //
+        // console.log(document.querySelector("a").firstChild.nodeValue)
+        // document.querySelector("a").firstChild.nodeValue = "HELLO"
+
+        /** 노드 생성하기 **/
+        // const elementNode = document.createElement("div")
+        // console.log(elementNode, elementNode.nodeType)
+        //
+        // const textNode = document.createTextNode("hi")
+        // console.log(textNode, textNode.nodeType)
+
+        /** 문자열을 사용하여 노드 생성 및 추가 하기 **/
+        // console.log(document.querySelector("#A").innerHTML)
+        // document.querySelector("#A").innerHTML = '<strong>HI</strong>'
+        //
+        // console.log(document.querySelector("#B"))
+        // document.querySelector("#B").outerHTML = `<div id="B">Whats Shaking</div>`
+        //
+        // console.log("-------textContent-------")
+        // console.log(document.querySelector("#t").textContent)
+        // console.log("-------innerText-------")
+        // console.log(document.querySelector("#t").innerText)
+        //
+        // document.querySelector("#C").textContent = 'dude'
+        // document.querySelector("#D").innerText = "keep it~"
+        //
+        // document.querySelector("#E").outerText = "real!"
+
+        // const elm = document.getElementById("elm")
+        // elm.insertAdjacentHTML("beforebegin", "<span>Hey-</span>")
+        // elm.insertAdjacentHTML("afterbegin", "<span>Dude</span>")
+        // elm.insertAdjacentHTML("beforeend", "<span>-are</span>")
+        // elm.insertAdjacentHTML("afterend", "<span>-you?</span>")
+
+        /** DOM트리의 일부를 문자열로 추출 하기 **/
+        // const divA = document.querySelector("#A")
+        // const divB = document.querySelector("#B")
+        //
+        // console.log(divA.innerHTML)
+        // console.log(divA.outerHTML)
+        //
+        // console.log(divB.textContent)
+        // console.log(divB.innerText)
+        // console.log(divB.outerText)
+
+        /** appendChild, insertBefore를 이용하여 노드를 DOM에 추가하기 **/
+        // const strongElement = document.createElement("strong")
+        // const textNode = document.createTextNode("dude")
+        // // strongElement.innerText = "dude"
+        //
+        // strongElement.appendChild(textNode)
+        // const pElement = document.querySelector("p")
+        // pElement.appendChild(strongElement)
+        //
+        // const liElement = document.createElement("li")
+        // liElement.innerText = "1"
+        //
+        // const ulElement = document.querySelector("ul")
+        // ulElement.insertBefore(liElement, ulElement.firstChild)
+        //
+        // pElement.insertBefore(ulElement, pElement.firstChild)
+        // pElement.appendChild(ulElement)
+
+        /** removeChild(), replaceChild()를 이용하여 노드를 제거하거나 바꾸기 **/
+        // const divA = document.querySelector("#A")
+        // // divA.parentNode.removeChild(divA)
+        //
+        // const spanElement = document.createElement("span")
+        // spanElement.innerText = 'Howdy'
+        // divA.parentElement.replaceChild(spanElement, divA)
+
+        /** cloneNode()를 사용하여 노드 복제 **/
+        // const ulElement = document.querySelector("ul")
+        // const onlyUl = ulElement.cloneNode()
+        // const withChildUl = ulElement.cloneNode(true)
+        //
+        // console.log(onlyUl)
+        // console.log(withChildUl)
+
+        /** 직계 자식 노드 전부에 대한 컬렉션 얻기 **/
+        // const ulElementChildNodes = document.querySelector("ul").childNodes
+        // console.log(ulElementChildNodes)
+        // ulElementChildNodes.forEach((item) => console.log(item))
+
+        /** 노드 컬렉션 배열로 변환 **/
+        // const linkHTMLCollection = document.links
+        // const linkNodeList = document.querySelectorAll("a")
+        //
+        // console.log(Array.isArray(linkHTMLCollection))
+        // console.log(Array.isArray(linkNodeList))
+        //
+        // console.log(Array.from(linkHTMLCollection))
+        // console.log(Array.from(linkNodeList))
+
+        /** DOM내의 노드 탐색 **/
+        const ulElement = document.querySelector("ul")
+
+        console.log("---ul의 부모 노드는?")
+        console.log(ulElement.parentNode.nodeName)
+        console.log(ulElement.parentElement.nodeName)
+
+        console.log("---ul의 첫번째 자식은?")
+        console.log(ulElement.firstChild.nodeName)
+        console.log(ulElement.firstElementChild.nodeName)
+
+        console.log("---ul의 마지막 자식은?")
+        console.log(ulElement.lastChild.nodeName)
+        console.log(ulElement.lastElementChild.nodeName)
+
+        console.log("---첫번째 li의 nextSibling은?")
+        console.log(document.querySelector("#A").nextSibling.nodeName)
+        console.log(document.querySelector("#A").nextElementSibling.nodeName)
+
+        console.log("---마지막 li의 nextSibling은?")
+        console.log(document.querySelector("#B").previousSibling.nodeName)
+        console.log(document.querySelector("#B").previousElementSibling.nodeName)
+
+        console.log("---ul의 자식 node 컬렉션")
+        console.log(ulElement.childNodes)
+        console.log(ulElement.children)
+    </script>
+</body>
+</html>
