@@ -5,7 +5,7 @@
     <title>Element 노드</title>
 </head>
 <body>
-    <a href="#"></a>
+    <a href="#">Hi</a>
     <script>
         /** element 노드 개요 **/
         // const anchor = document.querySelector("a")
@@ -13,9 +13,14 @@
         // console.log(Object.keys(anchor))
 
         /** ElementNode 생성 **/
-        const $textArea = document.createElement("textarea")
-        document.body.appendChild($textArea)
-        console.log(document.querySelector("textarea"))
+        // const $textArea = document.createElement("textarea")
+        // document.body.appendChild($textArea)
+        // console.log(document.querySelector("textarea"))
+
+        /** Element 태그의 이름 얻기 **/
+        const $a = document.querySelector("a")
+        console.log($a.tagName)
+        console.log($a.nodeName)
     </script>
 </body>
 </html>

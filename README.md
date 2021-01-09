@@ -139,3 +139,7 @@ DOM에서 각 element가 고유한 JavaScript 인터페이스/생성자를 통�
 ## 3-1 Element 생성
 
 `createElement()`를 이용해 동적으로 DOM에 `ElementNode`를 추가할 수 있다.
+
+## 3-2 Element 태그 이름 얻기
+
+`tagName`속성을 사용하여 element이름에 접근 가능 (node의 `nodeName`과 동일한 결과 반환)
