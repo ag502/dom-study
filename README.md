@@ -101,3 +101,10 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
 ---
 
 `innerText` `outerText` `textContent`를 사용하여 문자열을 추출할 수 있다.
+
+## 1-10 appendChild(), insertBefore()를 사용하여 노드 개체를 DOM에 추가하기
+
+---
+  > 이미 기존의 노드를 참조할 경우 새로운 위치로 이동(삭제할 필요 없음)
+  1. `appendChild()`: 선택된 노드 개체의 마지막 자식으로 노드를 삽입
+  2. `insertBefore()`: 지정된 노드 이전에 새로운 노드 삽입.

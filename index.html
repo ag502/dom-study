@@ -24,6 +24,12 @@
 <!--    <i id="elm">how</i>-->
     <div id="A"><i>Hi</i></div>
     <div id="B">Dude<strong> !</strong></div>
+    <p>Hi</p>
+
+    <ul>
+        <li>2</li>
+        <li>3</li>
+    </ul>
     <script>
         // for (let key in Node) {
         //     console.log(`${key} = ${Node[key]}`)
@@ -87,15 +93,33 @@
         // elm.insertAdjacentHTML("afterend", "<span>-you?</span>")
 
         /** DOM트리의 일부를 문자열로 추출 하기 **/
-        const divA = document.querySelector("#A")
-        const divB = document.querySelector("#B")
+        // const divA = document.querySelector("#A")
+        // const divB = document.querySelector("#B")
+        //
+        // console.log(divA.innerHTML)
+        // console.log(divA.outerHTML)
+        //
+        // console.log(divB.textContent)
+        // console.log(divB.innerText)
+        // console.log(divB.outerText)
 
-        console.log(divA.innerHTML)
-        console.log(divA.outerHTML)
+        /** appendChild, insertBefore를 이용하여 노드를 DOM에 추가하기 **/
+        const strongElement = document.createElement("strong")
+        const textNode = document.createTextNode("dude")
+        // strongElement.innerText = "dude"
 
-        console.log(divB.textContent)
-        console.log(divB.innerText)
-        console.log(divB.outerText)
+        strongElement.appendChild(textNode)
+        const pElement = document.querySelector("p")
+        pElement.appendChild(strongElement)
+
+        const liElement = document.createElement("li")
+        liElement.innerText = "1"
+
+        const ulElement = document.querySelector("ul")
+        ulElement.insertBefore(liElement, ulElement.firstChild)
+
+        pElement.insertBefore(ulElement, pElement.firstChild)
+        pElement.appendChild(ulElement)
     </script>
 </body>
 </html>
