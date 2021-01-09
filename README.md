@@ -136,19 +136,19 @@ nodeValue를 이용해 텍스트 노드의 새로운 문자열을 지정할 수 
 
 DOM에서 각 element가 고유한 JavaScript 인터페이스/생성자를 통해 만들어 진다.
 
-## 3-1 Element 생성
+## 3-3 Element 생성
 
 `createElement()`를 이용해 동적으로 DOM에 `ElementNode`를 추가할 수 있다.
 
-## 3-2 Element 태그 이름 얻기
+## 3-4 Element 태그 이름 얻기
 
 `tagName`속성을 사용하여 element이름에 접근 가능 (node의 `nodeName`과 동일한 결과 반환)
 
-## 3-3 Element의 Attribute 및 값에 대한 리스트/컬렉션 얻기
+## 3-5 Element의 Attribute 및 값에 대한 리스트/컬렉션 얻기
 
 attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 컬렉션을 얻을 수 있다(NamedNodeMap(attribute node 리스트)을 반환)
 
-## 3-4 Element의 Attribute 값 획득, 설정, 제거
+## 3-6 Element의 Attribute 값 획득, 설정, 제거
 
   * 획득
     > `getAttribute()`
@@ -157,7 +157,11 @@ attributes 속성을 사용하면, 현재 element에 정의된 attr 노드의 �
   * 제거
     > `removeAttribute()`
     
-## 3-5 Element가 특정 attribute을 가지고 있는지 판단하기
+## 3-7 Element가 특정 attribute을 가지고 있는지 판단하기
   
 `hasAttribute()`를 이용하여 포함 여부 확인 가능(값이 정의되지 않은 attr라도 참 반환)
   > Boolean attribute의 경우 boolean응답을 받을 수 있다. (`cheackbok`의 체크여부 확인)
+  
+## 3-8 Class Attribute 값 리스트 얻기
+
+`classList` 속성을 이용하면 `className` 속성에서 반환되는 공백으로 구분된 문자열 값을 사용하는 것보다 훨씬 쉽게 class Attribute에 접근가능.

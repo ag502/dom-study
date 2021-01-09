@@ -66,13 +66,19 @@
         // console.log($a.getAttribute("hidden"))
 
         /** Element가 특정 attribute를 가지고 있는지 확인하기 **/
+        // const $a = document.querySelector("a")
+        // console.log(
+        //     $a.hasAttribute("href"),
+        //     $a.hasAttribute("id"),
+        //     $a.hasAttribute("goo")
+        // )
+        // console.log(document.querySelector("input").hasAttribute("checked"))
+
+        /** Class Attribute 값 리스트 얻기 **/
         const $a = document.querySelector("a")
-        console.log(
-            $a.hasAttribute("href"),
-            $a.hasAttribute("id"),
-            $a.hasAttribute("goo")
-        )
-        console.log(document.querySelector("input").hasAttribute("checked"))
+        console.log($a.classList)
+        console.log($a.getAttribute("class"))
+        console.log($a.className)
     </script>
 </body>
 </html>
