@@ -290,3 +290,7 @@ window, element, document 모두 `addEventListener()` 사용가능하며, `addEv
 
   > document.createEvent('CustomEvent')
   > event.initCustomEvent(eventName, bubble?, cancelable?, event.detail)
+  
+## 11-13 이벤트 위임
+
+이벤트 위임(delegation)은 이벤트 흐름을 활용하여 단일 이벤트 수신기가 여러 개의 이벤트 대상을 처리할 수 있게 하는 프로그래밍 행위를 말한다.

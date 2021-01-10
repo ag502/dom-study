@@ -7,7 +7,18 @@
 <!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
 <body>
 <!--    <div>mouse over me</div>-->
-    <div>click me</div>
+<!--    <div>click me</div>-->
+    <p>Click a table Cell</p>
+    <table border="1">
+        <tbody>
+            <tr><td>row 1 column 1</td><td>row 1 column 2</td></tr>
+            <tr><td>row 2 column 1</td><td>row 2 column 2</td></tr>
+            <tr><td>row 3 column 1</td><td>row 3 column 2</td></tr>
+            <tr><td>row 4 column 1</td><td>row 4 column 2</td></tr>
+            <tr><td>row 5 column 1</td><td>row 5 column 2</td></tr>
+            <tr><td>row 6 column 1</td><td>row 6 column 2</td></tr>
+        </tbody>
+    </table>
     <script>
         /** DOM 이벤트 개요 **/
         // const divElement = document.querySelector("span")
@@ -132,18 +143,24 @@
        //      console.log("What, denied from being invoked!")
        //  })
         /** 사용자 정의 이벤트 **/
-        const divElement = document.querySelector("div")
-        // 이벤트 생성
-        const cheer = document.createEvent("CustomEvent")
-        // 사용자 정의 이벤트에 대한 수신기 생성
-        divElement.addEventListener("goBigBlue", function (event) {
-            console.log(event.detail)
+        // const divElement = document.querySelector("div")
+        // // 이벤트 생성
+        // const cheer = document.createEvent("CustomEvent")
+        // // 사용자 정의 이벤트에 대한 수신기 생성
+        // divElement.addEventListener("goBigBlue", function (event) {
+        //     console.log(event.detail)
+        // })
+        // // initCustomEvent
+        // cheer.initCustomEvent("goBigBlue", true, false, {goBigBlueIs: 'its gone'})
+        //
+        // // 호출
+        // divElement.dispatchEvent(cheer)
+        /** 이벤트 위임 **/
+        document.querySelector("table").addEventListener("click", function(event) {
+            if (event.target.tagName.toLowerCase() === "td") {
+                console.log(event.target.textContent)
+            }
         })
-        // initCustomEvent
-        cheer.initCustomEvent("goBigBlue", true, false, {goBigBlueIs: 'its gone'})
-
-        // 호출
-        divElement.dispatchEvent(cheer)
     </script>
 </body>
 </html>
