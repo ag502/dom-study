@@ -270,3 +270,6 @@ window, element, document 모두 `addEventListener()` 사용가능하며, `addEv
 ## 11-8 이벤트가 호출된 노드나 개체가 아닌 이벤트의 대상을 참조
 
 이벤트 수신기 함수에 전달되는 이벤트 개체는 이벤트가 발생된 노드나 개체에 대한 참조(`event.target`)를 제공한다.
+
+## 11-9 preventDefault()를 사용하여 기본 브라우저 이벤트 취소하기
+  > `preventDefault()`가 버블링과 캡쳐링을 막지는 않는다.
