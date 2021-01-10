@@ -6,18 +6,26 @@
 </head>
 <body>
     <ul>
-        <li>Hello</li>
-        <li>big</li>
-        <li>bad</li>
+        <li class="liClass">Hello</li>
+        <li class="liClass">big</li>
+        <li class="liClass">bad</li>
         <li id="last">world</li>
     </ul>
     <script>
         /** 특정 element 노드 선택하기 **/
-        console.log(document.querySelector("li").textContent)
-        console.log(document.getElementById("last").textContent)
+        // console.log(document.querySelector("li").textContent)
+        // console.log(document.getElementById("last").textContent)
+        //
+        // const ulElement = document.querySelector("ul")
+        // console.log(ulElement.querySelector("li").textContent)
 
+        /** Element 노드 리스트 선택 및 생성하기 **/
         const ulElement = document.querySelector("ul")
-        console.log(ulElement.querySelector("li").textContent)
+
+        console.log(document.querySelectorAll("li"))
+        console.log(document.getElementsByTagName("li"))
+        console.log(document.getElementsByClassName("liClass"))
+        console.log(ulElement.childNodes)
     </script>
 </body>
 </html>

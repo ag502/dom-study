@@ -190,5 +190,15 @@ element 노드의 `dataset` 속성은 element에서 data-\*로 시작하는 모�
 ## 4-1 특정 Element 노드 선택하기
 
 `getElementById()` `querySelector()`를 통해 단일 element를 선택할 수 있다.
-
 > `querySelector()`는 element에도 정의가 되어 있다.
+
+## 4-2 Element 노드 리스트 선택 및 생성하기
+
+`querySelectorAll()`, `getElementsByClassName()`, `getElementsByTagName()`, `getElementsByName`, `childNodes`는 NodeList나 HTMLCollection을 반환
+  * querySelectorAll
+    > static한 node list 반환
+  * getElementsByName, childNodes
+    > live한 node list 반환
+  * getElementsByTagName, getElementsByClassName
+    > live한 HTML Collection 반환
+
