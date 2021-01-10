@@ -202,3 +202,7 @@ element 노드의 `dataset` 속성은 element에서 data-\*로 시작하는 모�
   * getElementsByTagName, getElementsByClassName
     > live한 HTML Collection 반환
 
+## 4-3 직계 자식 Element 노드를 모두 선택하기
+
+element 노드에서 `children` 속성을 사용하면, element 노드의 직계자손들의 HTML Collection을 얻을 수 있다.
+

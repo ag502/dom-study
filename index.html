@@ -6,6 +6,7 @@
 </head>
 <body>
     <ul>
+        <li><strong>Hi</strong></li>
         <li class="liClass">Hello</li>
         <li class="liClass">big</li>
         <li class="liClass">bad</li>
@@ -20,12 +21,21 @@
         // console.log(ulElement.querySelector("li").textContent)
 
         /** Element 노드 리스트 선택 및 생성하기 **/
-        const ulElement = document.querySelector("ul")
+        // const ulElement = document.querySelector("ul")
+        //
+        // console.log(document.querySelectorAll("li"))
+        // console.log(document.getElementsByTagName("li"))
+        // console.log(document.getElementsByClassName("liClass"))
+        // console.log(ulElement.childNodes)
 
-        console.log(document.querySelectorAll("li"))
-        console.log(document.getElementsByTagName("li"))
-        console.log(document.getElementsByClassName("liClass"))
-        console.log(ulElement.childNodes)
+        /** 직계 자식 Element 노드를 모두 선택하기 **/
+        const ulElement = document.querySelector("ul")
+        console.log(ulElement.children)
+
+        Array.from(ulElement.children).forEach(elementNode => {
+            console.log(elementNode)
+            console.log(elementNode.getAttribute("class"))
+        })
     </script>
 </body>
 </html>
