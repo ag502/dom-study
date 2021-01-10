@@ -219,3 +219,8 @@ element 노드에서 `children` 속성을 사용하면, element 노드의 직계
 
 모든 HTML element는 해당 element에 한정된 인라인 CSS 속성을 넣는 데 사용할 수 있는 style attribute를 가진다.
   > style 속성은 문자열이 아닌 CSSStyleDeclaration 개체를 반환하며, 인라인 스타일만 반영
+
+## 6-2 개별 인라인 CSS 속성 가져오기, 설정, 제거
+
+  1. style 속성에서 css 속성 직접지정
+  2. style 속성에서 제공하는 `getPropertyValue()` `setProperty()` `removeProperty()`를 사용
