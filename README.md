@@ -278,3 +278,8 @@ window, element, document 모두 `addEventListener()` 사용가능하며, `addEv
 ## 11-10 stopPropagation()을 사용하여 이벤트 흐름을 중지시키기
 
 `stopPropagation()`을 호출하면 캡쳐/버블링 이벤트 흐름단계가 중지되지만, 노드나 개체에 직접 연결된 이벤트는 여전히 호출된다. 기본 이벤트 또한 막지 못한다.
+
+## 11-11 stopImmediatePropagation()을 사용하여 동일한 대상의 이벤트 흐름뿐만 아니라 다른 유사 이벤트도 중지시키기
+
+`stopImmediatePropagation()`을 호출하면, 이벤트 흐름 단계를 중지시키는 것(`stopPropagation()`)뿐만 아니라 `stopPropagation()`메서드를 호출한 이벤트 수신기 이후에 연결되어 <br>
+호출되는 이벤트 대상의 다른 유사한 이벤트도 중지시킨다.
