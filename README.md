@@ -210,3 +210,7 @@ element 노드에서 `children` 속성을 사용하면, element 노드의 직계
 
 `querySelector()`, `querySelectorAll()`, `getElementsByClassName()`, `getElementsByTagName()`는 element에도 정의 되어있다.
   > element노드에서 이 메서드를 호출하면, element 노드를 검색하고자 하는 특정 컨텍스트를 선택할 수 있다.
+
+## 4-6 선택된 Element를 검증하기 위해 matches()를 사용하기
+
+`matches()` 메서드를 사용하면 element가 selector 문자열에 들어맞는지를 판별할 수 있다.

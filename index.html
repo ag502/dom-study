@@ -43,19 +43,26 @@
         // })
 
         /** 컨텍스트 기반 Element 선택 **/
-        const divElement = document.querySelector("div")
+        // const divElement = document.querySelector("div")
+        //
+        // console.log(document.querySelectorAll("ul"))
+        // console.log(divElement.querySelectorAll("ul"))
+        //
+        // console.log(document.querySelectorAll("li"))
+        // console.log(divElement.querySelectorAll("li"))
+        //
+        // console.log(document.getElementsByTagName("li"))
+        // console.log(divElement.getElementsByTagName("li"))
+        //
+        // console.log(document.getElementsByClassName("liClass"))
+        // console.log(divElement.getElementsByClassName("liClass"))
 
-        console.log(document.querySelectorAll("ul"))
-        console.log(divElement.querySelectorAll("ul"))
+        /** 선택된 Element 검증 **/
+        const liElement = document.querySelectorAll("li")
 
-        console.log(document.querySelectorAll("li"))
-        console.log(divElement.querySelectorAll("li"))
-
-        console.log(document.getElementsByTagName("li"))
-        console.log(divElement.getElementsByTagName("li"))
-
-        console.log(document.getElementsByClassName("liClass"))
-        console.log(divElement.getElementsByClassName("liClass"))
+        Array.from(liElement).forEach((elementNode) => {
+            console.log(elementNode.matches("div li:first-child"))
+        })
     </script>
 </body>
 </html>
