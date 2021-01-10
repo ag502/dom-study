@@ -14,39 +14,52 @@
         // console.log(divElement.getAttribute("style"))
 
         /** 개별 인라인 CSS 속성 가져오기, 설정, 제거 **/
-        const divStyle = document.querySelector("div").style
+        // const divStyle = document.querySelector("div").style
+        //
+        // console.log(divStyle)
+        // //설정
+        // // divStyle.backgroundColor = "red"
+        // // divStyle.border = "1px solid black"
+        // // divStyle.width = "100px"
+        // // divStyle.height = "100px"
+        // divStyle.setProperty("background-color", "red")
+        // divStyle.setProperty("border", "1px solid black")
+        // divStyle.setProperty("width", "100px")
+        // divStyle.setProperty("height", "100px")
+        // console.log(divStyle)
+        //
+        // //가져오기
+        // // console.log(divStyle.backgroundColor)
+        // // console.log(divStyle.border)
+        // // console.log(divStyle.width)
+        // // console.log(divStyle.height)
+        // console.log(divStyle.getPropertyValue("background-color"))
+        // console.log(divStyle.getPropertyValue("border"))
+        // console.log(divStyle.getPropertyValue("width"))
+        // console.log(divStyle.getPropertyValue("height"))
+        //
+        // //제거
+        // // divStyle.backgroundColor = ""
+        // // divStyle.border = ""
+        // // divStyle.width = ""
+        // // divStyle.height = ""
+        // divStyle.removeProperty("background-color")
+        // divStyle.removeProperty("border")
+        // divStyle.removeProperty("width")
+        // divStyle.removeProperty("height")
 
-        console.log(divStyle)
-        //설정
-        // divStyle.backgroundColor = "red"
-        // divStyle.border = "1px solid black"
-        // divStyle.width = "100px"
-        // divStyle.height = "100px"
-        divStyle.setProperty("background-color", "red")
-        divStyle.setProperty("border", "1px solid black")
-        divStyle.setProperty("width", "100px")
-        divStyle.setProperty("height", "100px")
-        console.log(divStyle)
+        /** 모든 인라인 CSS 속성 가져오기, 설정, 제거 **/
+        const divElement = document.querySelector("div")
+        const divStyle = divElement.style
 
-        //가져오기
-        // console.log(divStyle.backgroundColor)
-        // console.log(divStyle.border)
-        // console.log(divStyle.width)
-        // console.log(divStyle.height)
-        console.log(divStyle.getPropertyValue("background-color"))
-        console.log(divStyle.getPropertyValue("border"))
-        console.log(divStyle.getPropertyValue("width"))
-        console.log(divStyle.getPropertyValue("height"))
+        divStyle.cssText = "background-color:red;border:1px solid black;height:100px;width:100px;"
+        console.log(divStyle.cssText)
+        divStyle.cssText = ""
 
-        //제거
-        // divStyle.backgroundColor = ""
-        // divStyle.border = ""
-        // divStyle.width = ""
-        // divStyle.height = ""
-        divStyle.removeProperty("background-color")
-        divStyle.removeProperty("border")
-        divStyle.removeProperty("width")
-        divStyle.removeProperty("height")
+        //setAttribute, getAttribute, removeAttribute 사용 결과와 동일
+        divElement.setAttribute("style", "background-color:red;border:1px solid black;height:100px;width:100px;")
+        console.log(divElement.getAttribute("style"))
+        divElement.removeAttribute("style")
     </script>
 </body>
 </html>

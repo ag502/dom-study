@@ -224,3 +224,7 @@ element 노드에서 `children` 속성을 사용하면, element 노드의 직계
 
   1. style 속성에서 css 속성 직접지정
   2. style 속성에서 제공하는 `getPropertyValue()` `setProperty()` `removeProperty()`를 사용
+
+## 6-3 모든 인라인 CSS 속성 가져오기, 설정, 제거
+
+CSSStyleDeclaration 개체의 `cssText` 속성과 `getAttribute()` 및 `setAttribute()` 메서드를ㄹ 사용하면 style attribute의 전체값을 가져오고 설정 및 제거할 수 있다.
