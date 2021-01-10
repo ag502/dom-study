@@ -7,7 +7,7 @@
 <!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
 <body>
 <!--    <div>mouse over me</div>-->
-    <span>click me</span>
+    <div>click me</div>
     <script>
         /** DOM 이벤트 개요 **/
         // const divElement = document.querySelector("span")
@@ -92,8 +92,25 @@
         //     console.log(event.currentTarget)
         // })
         /** 이벤트가 호출된 노드나 개체가 아닌 이벤트의 대상 참조 **/
-        document.body.addEventListener("click", function(event) {
-            console.log(event.target)
+        // document.body.addEventListener("click", function(event) {
+        //     console.log(event.target)
+        // })
+        /** stopPropagation()을 사용하여 이벤트 흐름을 중지시키기 **/
+        document.querySelector("div").addEventListener("click", function() {
+            console.log('me too, but nothing from the event flow!')
+        })
+
+        document.querySelector("div").addEventListener("click", function(event) {
+            console.log("invoke all click events attached, but cancel capture and bubble event phases")
+            event.stopPropagation()
+        })
+
+        document.querySelector("div").addEventListener("click", function() {
+            console.log('me too, but nothing from the event flow!')
+        })
+
+        document.body.addEventListener("click", function() {
+            console.log("What, denied from being invoked!")
         })
     </script>
 </body>
