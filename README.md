@@ -214,3 +214,25 @@ element 노드에서 `children` 속성을 사용하면, element 노드의 직계
 ## 4-6 선택된 Element를 검증하기 위해 matches()를 사용하기
 
 `matches()` 메서드를 사용하면 element가 selector 문자열에 들어맞는지를 판별할 수 있다.
+
+## 6-1 style attribute(element 인라인 CSS 속성) 개요
+
+모든 HTML element는 해당 element에 한정된 인라인 CSS 속성을 넣는 데 사용할 수 있는 style attribute를 가진다.
+  > style 속성은 문자열이 아닌 CSSStyleDeclaration 개체를 반환하며, 인라인 스타일만 반영
+
+## 6-2 개별 인라인 CSS 속성 가져오기, 설정, 제거
+
+  1. style 속성에서 css 속성 직접지정
+  2. style 속성에서 제공하는 `getPropertyValue()` `setProperty()` `removeProperty()`를 사용
+
+## 6-3 모든 인라인 CSS 속성 가져오기, 설정, 제거
+
+CSSStyleDeclaration 개체의 `cssText` 속성과 `getAttribute()` 및 `setAttribute()` 메서드를ㄹ 사용하면 style attribute의 전체값을 가져오고 설정 및 제거할 수 있다.
+
+## 6-4 `getComputedStyle()`을 사용하여 element의 계산된 스타일(계층화된 것을 포함한 실제 스타일) 가져오기
+
+element의 계층화된 CSS(인라인 스타일시트, 외부 스타일시트, 브라우저 스타일 시트...)를 가져오려면 `window.getComputedStyle()`을 이용해야 한다.
+
+## 6-5 `class` 및 `id` attribute를 사용하여 element의 CSS속성을 적용 및 제거하기
+
+인라인 스타일시트나, 외부 스타일시트에 정의된 스타일 규칙은 `class` 및 `id` attribute를 사용하여 element에 추가하거나 제거할 수 있다.

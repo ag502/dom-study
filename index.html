@@ -2,67 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Element 노드</title>
+    <title>Element 노드 인라인 스타일</title>
+    <style>
+        .foo {
+            background-color: red;
+            padding: 10px;
+        }
+        #bar {
+            border:10px solid #000;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <ul>
-            <li><strong>Hi</strong></li>
-            <li class="liClass">Hello</li>
-            <li class="liClass">big</li>
-            <li class="liClass">bad</li>
-            <li id="last">world</li>
-        </ul>
-    </div>
-    <ul>
-        <li class="liClass">Hello</li>
-    </ul>
+<!--    <div style="background-color:red;border: 1px solid black;height:100px;width:100px"></div>-->
+<!--    <div style="background-color:green; border: 1px solid purple;"></div>-->
+    <div></div>
     <script>
-        /** 특정 element 노드 선택하기 **/
-        // console.log(document.querySelector("li").textContent)
-        // console.log(document.getElementById("last").textContent)
-        //
-        // const ulElement = document.querySelector("ul")
-        // console.log(ulElement.querySelector("li").textContent)
-
-        /** Element 노드 리스트 선택 및 생성하기 **/
-        // const ulElement = document.querySelector("ul")
-        //
-        // console.log(document.querySelectorAll("li"))
-        // console.log(document.getElementsByTagName("li"))
-        // console.log(document.getElementsByClassName("liClass"))
-        // console.log(ulElement.childNodes)
-
-        /** 직계 자식 Element 노드를 모두 선택하기 **/
-        // const ulElement = document.querySelector("ul")
-        // console.log(ulElement.children)
-        //
-        // Array.from(ulElement.children).forEach(elementNode => {
-        //     console.log(elementNode)
-        //     console.log(elementNode.getAttribute("class"))
-        // })
-
-        /** 컨텍스트 기반 Element 선택 **/
+        /** style attribute 개요 **/
         // const divElement = document.querySelector("div")
-        //
-        // console.log(document.querySelectorAll("ul"))
-        // console.log(divElement.querySelectorAll("ul"))
-        //
-        // console.log(document.querySelectorAll("li"))
-        // console.log(divElement.querySelectorAll("li"))
-        //
-        // console.log(document.getElementsByTagName("li"))
-        // console.log(divElement.getElementsByTagName("li"))
-        //
-        // console.log(document.getElementsByClassName("liClass"))
-        // console.log(divElement.getElementsByClassName("liClass"))
+        // console.log(divElement.style)
+        // console.log(divElement.getAttribute("style"))
 
-        /** 선택된 Element 검증 **/
-        const liElement = document.querySelectorAll("li")
+        /** 개별 인라인 CSS 속성 가져오기, 설정, 제거 **/
+        // const divStyle = document.querySelector("div").style
+        //
+        // console.log(divStyle)
+        // //설정
+        // // divStyle.backgroundColor = "red"
+        // // divStyle.border = "1px solid black"
+        // // divStyle.width = "100px"
+        // // divStyle.height = "100px"
+        // divStyle.setProperty("background-color", "red")
+        // divStyle.setProperty("border", "1px solid black")
+        // divStyle.setProperty("width", "100px")
+        // divStyle.setProperty("height", "100px")
+        // console.log(divStyle)
+        //
+        // //가져오기
+        // // console.log(divStyle.backgroundColor)
+        // // console.log(divStyle.border)
+        // // console.log(divStyle.width)
+        // // console.log(divStyle.height)
+        // console.log(divStyle.getPropertyValue("background-color"))
+        // console.log(divStyle.getPropertyValue("border"))
+        // console.log(divStyle.getPropertyValue("width"))
+        // console.log(divStyle.getPropertyValue("height"))
+        //
+        // //제거
+        // // divStyle.backgroundColor = ""
+        // // divStyle.border = ""
+        // // divStyle.width = ""
+        // // divStyle.height = ""
+        // divStyle.removeProperty("background-color")
+        // divStyle.removeProperty("border")
+        // divStyle.removeProperty("width")
+        // divStyle.removeProperty("height")
 
-        Array.from(liElement).forEach((elementNode) => {
-            console.log(elementNode.matches("div li:first-child"))
-        })
+        /** 모든 인라인 CSS 속성 가져오기, 설정, 제거 **/
+        // const divElement = document.querySelector("div")
+        // const divStyle = divElement.style
+        //
+        // divStyle.cssText = "background-color:red;border:1px solid black;height:100px;width:100px;"
+        // console.log(divStyle.cssText)
+        // divStyle.cssText = ""
+        //
+        // //setAttribute, getAttribute, removeAttribute 사용 결과와 동일
+        // divElement.setAttribute("style", "background-color:red;border:1px solid black;height:100px;width:100px;")
+        // console.log(divElement.getAttribute("style"))
+        // divElement.removeAttribute("style")
+
+        /** getComputedStyle()을 사용하여 element의 계산된 스타일 가져오기 **/
+        // const divElement = document.querySelector("div")
+        // console.log(window.getComputedStyle(divElement).backgroundColor)
+        // console.log(window.getComputedStyle(divElement).border)
+
+        /** class 및 id attribute를 사용하여 element의 CSS속성을 적용 및 제거하기 **/
+        const divElement = document.querySelector("div")
+        divElement.setAttribute("id", "bar")
+        divElement.classList.toggle("foo")
     </script>
 </body>
 </html>
