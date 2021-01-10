@@ -4,16 +4,61 @@
     <meta charset="UTF-8">
     <title>DOM 이벤트</title>
 </head>
-<body onclick="console.log('fire/trigger inline attribute event handler')">
-    <span>click me</span>
+<!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
+<body>
+    <div>click me to start event flow</div>
     <script>
-        const divElement = document.querySelector("span")
-        divElement.onclick = function() {
-            console.log('fire/trigger property event handler')
-        }
+        /** DOM 이벤트 개요 **/
+        // const divElement = document.querySelector("span")
+        // divElement.onclick = function() {
+        //     console.log('fire/trigger property event handler')
+        // }
+        //
+        // divElement.addEventListener("click", function() {
+        //     console.log('fire/trigger addEventListener')
+        // })
+        /** 이벤트 흐름 **/
+        // 이벤트를 버블링하는 것뿐만 아니라 캡처 이벤트도 발생하도록 addEventListener()의 boolean 매개변수로 true를 전달하고 있음에 유의
+        // 1. 캡처단계
+        window.addEventListener("click", function() {
+            console.log("1")
+        }, true)
+        // 2. 캡처단계
+        document.addEventListener("click", function() {
+            console.log("2")
+        }, true)
+        // 3. 캡처단계
+        document.documentElement.addEventListener("click", function() {
+            console.log("3")
+        }, true)
+        // 4. 캡처단계
+        document.body.addEventListener("click", function() {
+            console.log("4")
+        }, true)
+        // 5. 캡처 단계 도중 대상 단계 발생
+        document.querySelector("div").addEventListener("click", function() {
+            console.log("5")
+        }, true)
 
-        divElement.addEventListener("click", function() {
-            console.log('fire/trigger addEventListener')
+        // 6. 버블링 단계 도중 대상 단계 발생
+        document.querySelector("div").addEventListener("click", function() {
+            console.log("6")
+        })
+        // 7. 버블링
+        document.body.addEventListener("click", function() {
+            console.log("7")
+        })
+        // 8. 버블링
+        document.documentElement.addEventListener("click", function() {
+            console.log("8")
+        })
+        // 9. 버블링
+        document.addEventListener("click", function() {
+            console.log("9")
+        })
+        // 10. 버블링
+        document.addEventListener("click", function() {
+            console.log("10")
         })
     </script>
 </body>
