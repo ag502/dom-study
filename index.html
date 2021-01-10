@@ -6,7 +6,8 @@
 </head>
 <!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
 <body>
-    <div>mouse over me</div>
+<!--    <div>mouse over me</div>-->
+    <div>click me</div>
     <script>
         /** DOM 이벤트 개요 **/
         // const divElement = document.querySelector("span")
@@ -61,23 +62,29 @@
         //     console.log("10")
         // })
         /** element노드, window개체, document개체에 이벤트 수신기를 추가하기 **/
-
-        const divEvent = function() {
-            console.log("moving over div")
-        }
-        document.querySelector("div").addEventListener("mousemove", divEvent)
-
-        document.addEventListener("mouseover", function() {
-            console.log("moving over document")
-        })
-
-        window.addEventListener("mouseover", function() {
-            console.log("moving over window")
-        })
-
-        document.querySelector("div").removeEventListener("mousemove", divEvent)
-        document.removeEventListener("mousemove",  function() {
-            console.log("moving over document")
+        // const divEvent = function() {
+        //     console.log("moving over div")
+        // }
+        // document.querySelector("div").addEventListener("mousemove", divEvent)
+        //
+        // document.addEventListener("mouseover", function() {
+        //     console.log("moving over document")
+        // })
+        //
+        // window.addEventListener("mouseover", function() {
+        //     console.log("moving over window")
+        // })
+        //
+        // document.querySelector("div").removeEventListener("mousemove", divEvent)
+        // document.removeEventListener("mousemove",  function() {
+        //     console.log("moving over document")
+        // })
+        /** 이벤트 개체에서 이벤트 속성 얻기 **/
+        document.querySelector("div").addEventListener("click", function(event) {
+            console.log(Object.keys(event))
+            Array.from(Object.keys(event)).forEach((item) => {
+                console.log(`${item} = ${event[item]}`)
+            })
         })
     </script>
 </body>
