@@ -236,3 +236,8 @@ element의 계층화된 CSS(인라인 스타일시트, 외부 스타일시트, �
 ## 6-5 `class` 및 `id` attribute를 사용하여 element의 CSS속성을 적용 및 제거하기
 
 인라인 스타일시트나, 외부 스타일시트에 정의된 스타일 규칙은 `class` 및 `id` attribute를 사용하여 element에 추가하거나 제거할 수 있다.
+
+## 11-1 DOM 이벤트 개요
+
+이벤트를 설정하는 하는 것은 `인라인 attribute 이벤트 핸들러`, `속성 이벤트 핸들러`, `addEventListener()` 메서드를 사용하여 수행할 수 있다.
+  > `addEventListener()`만이 견고하고 조직화된 솔루션을 제공한다.
