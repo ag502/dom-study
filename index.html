@@ -5,12 +5,17 @@
     <title>Element 노드</title>
 </head>
 <body>
+    <div>
+        <ul>
+            <li><strong>Hi</strong></li>
+            <li class="liClass">Hello</li>
+            <li class="liClass">big</li>
+            <li class="liClass">bad</li>
+            <li id="last">world</li>
+        </ul>
+    </div>
     <ul>
-        <li><strong>Hi</strong></li>
         <li class="liClass">Hello</li>
-        <li class="liClass">big</li>
-        <li class="liClass">bad</li>
-        <li id="last">world</li>
     </ul>
     <script>
         /** 특정 element 노드 선택하기 **/
@@ -29,13 +34,28 @@
         // console.log(ulElement.childNodes)
 
         /** 직계 자식 Element 노드를 모두 선택하기 **/
-        const ulElement = document.querySelector("ul")
-        console.log(ulElement.children)
+        // const ulElement = document.querySelector("ul")
+        // console.log(ulElement.children)
+        //
+        // Array.from(ulElement.children).forEach(elementNode => {
+        //     console.log(elementNode)
+        //     console.log(elementNode.getAttribute("class"))
+        // })
 
-        Array.from(ulElement.children).forEach(elementNode => {
-            console.log(elementNode)
-            console.log(elementNode.getAttribute("class"))
-        })
+        /** 컨텍스트 기반 Element 선택 **/
+        const divElement = document.querySelector("div")
+
+        console.log(document.querySelectorAll("ul"))
+        console.log(divElement.querySelectorAll("ul"))
+
+        console.log(document.querySelectorAll("li"))
+        console.log(divElement.querySelectorAll("li"))
+
+        console.log(document.getElementsByTagName("li"))
+        console.log(divElement.getElementsByTagName("li"))
+
+        console.log(document.getElementsByClassName("liClass"))
+        console.log(divElement.getElementsByClassName("liClass"))
     </script>
 </body>
 </html>

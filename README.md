@@ -206,3 +206,7 @@ element 노드의 `dataset` 속성은 element에서 data-\*로 시작하는 모�
 
 element 노드에서 `children` 속성을 사용하면, element 노드의 직계자손들의 HTML Collection을 얻을 수 있다.
 
+## 4-4 컨텍스트 기반 Element 선택
+
+`querySelector()`, `querySelectorAll()`, `getElementsByClassName()`, `getElementsByTagName()`는 element에도 정의 되어있다.
+  > element노드에서 이 메서드를 호출하면, element 노드를 검색하고자 하는 특정 컨텍스트를 선택할 수 있다.
