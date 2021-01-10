@@ -2,85 +2,165 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Element 노드 인라인 스타일</title>
-    <style>
-        .foo {
-            background-color: red;
-            padding: 10px;
-        }
-        #bar {
-            border:10px solid #000;
-            margin: 10px;
-        }
-    </style>
+    <title>DOM 이벤트</title>
 </head>
+<!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
 <body>
-<!--    <div style="background-color:red;border: 1px solid black;height:100px;width:100px"></div>-->
-<!--    <div style="background-color:green; border: 1px solid purple;"></div>-->
-    <div></div>
+<!--    <div>mouse over me</div>-->
+<!--    <div>click me</div>-->
+    <p>Click a table Cell</p>
+    <table border="1">
+        <tbody>
+            <tr><td>row 1 column 1</td><td>row 1 column 2</td></tr>
+            <tr><td>row 2 column 1</td><td>row 2 column 2</td></tr>
+            <tr><td>row 3 column 1</td><td>row 3 column 2</td></tr>
+            <tr><td>row 4 column 1</td><td>row 4 column 2</td></tr>
+            <tr><td>row 5 column 1</td><td>row 5 column 2</td></tr>
+            <tr><td>row 6 column 1</td><td>row 6 column 2</td></tr>
+        </tbody>
+    </table>
     <script>
-        /** style attribute 개요 **/
+        /** DOM 이벤트 개요 **/
+        // const divElement = document.querySelector("span")
+        // divElement.onclick = function() {
+        //     console.log('fire/trigger property event handler')
+        // }
+        //
+        // divElement.addEventListener("click", function() {
+        //     console.log('fire/trigger addEventListener')
+        // })
+        /** 이벤트 흐름 **/
+        // // 이벤트를 버블링하는 것뿐만 아니라 캡처 이벤트도 발생하도록 addEventListener()의 boolean 매개변수로 true를 전달하고 있음에 유의
+        // // 1. 캡처단계
+        // window.addEventListener("click", function() {
+        //     console.log("1")
+        // }, true)
+        // // 2. 캡처단계
+        // document.addEventListener("click", function() {
+        //     console.log("2")
+        // }, true)
+        // // 3. 캡처단계
+        // document.documentElement.addEventListener("click", function() {
+        //     console.log("3")
+        // }, true)
+        // // 4. 캡처단계
+        // document.body.addEventListener("click", function() {
+        //     console.log("4")
+        // }, true)
+        // // 5. 캡처 단계 도중 대상 단계 발생
+        // document.querySelector("div").addEventListener("click", function() {
+        //     console.log("5")
+        // }, true)
+        //
+        // // 6. 버블링 단계 도중 대상 단계 발생
+        // document.querySelector("div").addEventListener("click", function() {
+        //     console.log("6")
+        // })
+        // // 7. 버블링
+        // document.body.addEventListener("click", function() {
+        //     console.log("7")
+        // })
+        // // 8. 버블링
+        // document.documentElement.addEventListener("click", function() {
+        //     console.log("8")
+        // })
+        // // 9. 버블링
+        // document.addEventListener("click", function() {
+        //     console.log("9")
+        // })
+        // // 10. 버블링
+        // document.addEventListener("click", function() {
+        //     console.log("10")
+        // })
+        /** element노드, window개체, document개체에 이벤트 수신기를 추가하기 **/
+        // const divEvent = function() {
+        //     console.log("moving over div")
+        // }
+        // document.querySelector("div").addEventListener("mousemove", divEvent)
+        //
+        // document.addEventListener("mouseover", function() {
+        //     console.log("moving over document")
+        // })
+        //
+        // window.addEventListener("mouseover", function() {
+        //     console.log("moving over window")
+        // })
+        //
+        // document.querySelector("div").removeEventListener("mousemove", divEvent)
+        // document.removeEventListener("mousemove",  function() {
+        //     console.log("moving over document")
+        // })
+        /** 이벤트 개체에서 이벤트 속성 얻기 **/
+        // document.querySelector("div").addEventListener("click", function(event) {
+        //     console.log(Object.keys(event))
+        //     Array.from(Object.keys(event)).forEach((item) => {
+        //         console.log(`${item} = ${event[item]}`)
+        //     })
+        // })
+        /** addEventListener() 사용 시 this의 값 **/
+        // document.body.addEventListener("click", function(event) {
+        //     console.log(this)
+        //     console.log(event.currentTarget)
+        // })
+        /** 이벤트가 호출된 노드나 개체가 아닌 이벤트의 대상 참조 **/
+        // document.body.addEventListener("click", function(event) {
+        //     console.log(event.target)
+        // })
+        /** stopPropagation()을 사용하여 이벤트 흐름을 중지시키기 **/
+        // document.querySelector("div").addEventListener("click", function() {
+        //     console.log('me too, but nothing from the event flow!')
+        // })
+        //
+        // document.querySelector("div").addEventListener("click", function(event) {
+        //     console.log("invoke all click events attached, but cancel capture and bubble event phases")
+        //     event.stopPropagation()
+        // })
+        //
+        // document.querySelector("div").addEventListener("click", function() {
+        //     console.log('me too, but nothing from the event flow!')
+        // })
+        //
+        // document.body.addEventListener("click", function() {
+        //     console.log("What, denied from being invoked!")
+        // })
+
+        /** stopImmediatePropagation()을 사용하여 이벤트 흐름 중지시키기 **/
+       //  document.querySelector("div").addEventListener("click", function() {
+       //      console.log('me too, but nothing from the event flow!')
+       //  })
+       //
+       //  document.querySelector("div").addEventListener("click", function(event) {
+       //      console.log("invoke all click events attached, but cancel capture and bubble event phases")
+       //      event.stopImmediatePropagation()
+       //  })
+       //
+       //  // stopImmediatePropagation 이후의 모든 이벤트 취소소
+       // document.querySelector("div").addEventListener("click", function() {
+       //      console.log('me too, but nothing from the event flow!')
+       //  })
+       //
+       //  document.body.addEventListener("click", function() {
+       //      console.log("What, denied from being invoked!")
+       //  })
+        /** 사용자 정의 이벤트 **/
         // const divElement = document.querySelector("div")
-        // console.log(divElement.style)
-        // console.log(divElement.getAttribute("style"))
-
-        /** 개별 인라인 CSS 속성 가져오기, 설정, 제거 **/
-        // const divStyle = document.querySelector("div").style
+        // // 이벤트 생성
+        // const cheer = document.createEvent("CustomEvent")
+        // // 사용자 정의 이벤트에 대한 수신기 생성
+        // divElement.addEventListener("goBigBlue", function (event) {
+        //     console.log(event.detail)
+        // })
+        // // initCustomEvent
+        // cheer.initCustomEvent("goBigBlue", true, false, {goBigBlueIs: 'its gone'})
         //
-        // console.log(divStyle)
-        // //설정
-        // // divStyle.backgroundColor = "red"
-        // // divStyle.border = "1px solid black"
-        // // divStyle.width = "100px"
-        // // divStyle.height = "100px"
-        // divStyle.setProperty("background-color", "red")
-        // divStyle.setProperty("border", "1px solid black")
-        // divStyle.setProperty("width", "100px")
-        // divStyle.setProperty("height", "100px")
-        // console.log(divStyle)
-        //
-        // //가져오기
-        // // console.log(divStyle.backgroundColor)
-        // // console.log(divStyle.border)
-        // // console.log(divStyle.width)
-        // // console.log(divStyle.height)
-        // console.log(divStyle.getPropertyValue("background-color"))
-        // console.log(divStyle.getPropertyValue("border"))
-        // console.log(divStyle.getPropertyValue("width"))
-        // console.log(divStyle.getPropertyValue("height"))
-        //
-        // //제거
-        // // divStyle.backgroundColor = ""
-        // // divStyle.border = ""
-        // // divStyle.width = ""
-        // // divStyle.height = ""
-        // divStyle.removeProperty("background-color")
-        // divStyle.removeProperty("border")
-        // divStyle.removeProperty("width")
-        // divStyle.removeProperty("height")
-
-        /** 모든 인라인 CSS 속성 가져오기, 설정, 제거 **/
-        // const divElement = document.querySelector("div")
-        // const divStyle = divElement.style
-        //
-        // divStyle.cssText = "background-color:red;border:1px solid black;height:100px;width:100px;"
-        // console.log(divStyle.cssText)
-        // divStyle.cssText = ""
-        //
-        // //setAttribute, getAttribute, removeAttribute 사용 결과와 동일
-        // divElement.setAttribute("style", "background-color:red;border:1px solid black;height:100px;width:100px;")
-        // console.log(divElement.getAttribute("style"))
-        // divElement.removeAttribute("style")
-
-        /** getComputedStyle()을 사용하여 element의 계산된 스타일 가져오기 **/
-        // const divElement = document.querySelector("div")
-        // console.log(window.getComputedStyle(divElement).backgroundColor)
-        // console.log(window.getComputedStyle(divElement).border)
-
-        /** class 및 id attribute를 사용하여 element의 CSS속성을 적용 및 제거하기 **/
-        const divElement = document.querySelector("div")
-        divElement.setAttribute("id", "bar")
-        divElement.classList.toggle("foo")
+        // // 호출
+        // divElement.dispatchEvent(cheer)
+        /** 이벤트 위임 **/
+        document.querySelector("table").addEventListener("click", function(event) {
+            if (event.target.tagName.toLowerCase() === "td") {
+                console.log(event.target.textContent)
+            }
+        })
     </script>
 </body>
 </html>

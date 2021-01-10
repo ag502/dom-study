@@ -236,3 +236,61 @@ element의 계층화된 CSS(인라인 스타일시트, 외부 스타일시트, �
 ## 6-5 `class` 및 `id` attribute를 사용하여 element의 CSS속성을 적용 및 제거하기
 
 인라인 스타일시트나, 외부 스타일시트에 정의된 스타일 규칙은 `class` 및 `id` attribute를 사용하여 element에 추가하거나 제거할 수 있다.
+
+## 11-1 DOM 이벤트 개요
+
+이벤트를 설정하는 하는 것은 `인라인 attribute 이벤트 핸들러`, `속성 이벤트 핸들러`, `addEventListener()` 메서드를 사용하여 수행할 수 있다.
+  > `addEventListener()`만이 견고하고 조직화된 솔루션을 제공한다.
+  
+## 11-3 이벤트 흐름
+
+이벤트 흐름은 캡처 단계(DOM 트리 줄기 -> 가지), 버블링 단계(DOM 트리 가지 -> 줄기), 혹은 양쪽 모두로 발생하도록 프로그래밍 할 수 있다.
+
+## 11-4 element노드, window개체, document개체에 이벤트 수신기를 추가하기
+
+window, element, document 모두 `addEventListener()` 사용가능하며, `addEventListener()`는 세가지 인자를 가진다.
+  > 1. 이벤트 유형 <br>
+  > 2. 이벤트가 발생될 때 호출될 함수 <br>
+  > 3. 캡처단계에서 실행 될지, 버블링 단계에서 실행될지 여부
+  
+## 11-5 이벤트 수신기 제거하기
+
+수신기가 익명 함수로 추가되지 않았다면 `removeEventListener()`로 이벤트를 제거할 수 있다.
+  > 익명함수로 추가된 이벤트 함수는 제거할 수 없다.
+  
+## 11-6 이벤트 개체에서 이벤트 속성 얻기
+
+이벤트에서 호출되는 핸들러나 콜백 함수에는 이벤트와 관련된 모든 정보를 가지고 있는 매개변수가 전송된다.
+
+## 11-7 addEventListener() 사용 시 this의 값
+
+`addEventListener()` 메서드에 전달되는 이벤트 수신기 함수 내부에서 this 값은 이벤트가 연결된 노드나 개체에 대한 참조가 된다.
+  > `event.currentTarget` 속성을 사용하면 this 속성이 제공하는 것과 동일하게 이벤트 수신기를 호출하는 노드나 개체에 대한 참조를 얻을 수 있다.
+  
+## 11-8 이벤트가 호출된 노드나 개체가 아닌 이벤트의 대상을 참조
+
+이벤트 수신기 함수에 전달되는 이벤트 개체는 이벤트가 발생된 노드나 개체에 대한 참조(`event.target`)를 제공한다.
+
+## 11-9 preventDefault()를 사용하여 기본 브라우저 이벤트 취소하기
+
+  > `preventDefault()`가 버블링과 캡쳐링을 막지는 않는다.
+  
+## 11-10 stopPropagation()을 사용하여 이벤트 흐름을 중지시키기
+
+`stopPropagation()`을 호출하면 캡쳐/버블링 이벤트 흐름단계가 중지되지만, 노드나 개체에 직접 연결된 이벤트는 여전히 호출된다. 기본 이벤트 또한 막지 못한다.
+
+## 11-11 stopImmediatePropagation()을 사용하여 동일한 대상의 이벤트 흐름뿐만 아니라 다른 유사 이벤트도 중지시키기
+
+`stopImmediatePropagation()`을 호출하면, 이벤트 흐름 단계를 중지시키는 것(`stopPropagation()`)뿐만 아니라 `stopPropagation()`메서드를 호출한 이벤트 수신기 이후에 연결되어 <br>
+호출되는 이벤트 대상의 다른 유사한 이벤트도 중지시킨다.
+
+## 11-12 사용자 정의 이벤트
+
+`addEventListener()`와 `document.createEvent()`, `initCustomEvent()`, `dispatchEvent()`와 조합해서 사용하면 사용자 정의 이벤트를 연결해 호출할 수 있다.
+
+  > document.createEvent('CustomEvent')
+  > event.initCustomEvent(eventName, bubble?, cancelable?, event.detail)
+  
+## 11-13 이벤트 위임
+
+이벤트 위임(delegation)은 이벤트 흐름을 활용하여 단일 이벤트 수신기가 여러 개의 이벤트 대상을 처리할 수 있게 하는 프로그래밍 행위를 말한다.
