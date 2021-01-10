@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <title>Element 노드 인라인 스타일</title>
     <style>
-        div {
+        .foo {
             background-color: red;
-            border: 1px solid black;
-            height: 100px;
-            width: 100px;
+            padding: 10px;
+        }
+        #bar {
+            border:10px solid #000;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
 <!--    <div style="background-color:red;border: 1px solid black;height:100px;width:100px"></div>-->
-    <div style="background-color:green; border: 1px solid purple;"></div>
+<!--    <div style="background-color:green; border: 1px solid purple;"></div>-->
+    <div></div>
     <script>
         /** style attribute 개요 **/
         // const divElement = document.querySelector("div")
@@ -70,9 +73,14 @@
         // divElement.removeAttribute("style")
 
         /** getComputedStyle()을 사용하여 element의 계산된 스타일 가져오기 **/
+        // const divElement = document.querySelector("div")
+        // console.log(window.getComputedStyle(divElement).backgroundColor)
+        // console.log(window.getComputedStyle(divElement).border)
+
+        /** class 및 id attribute를 사용하여 element의 CSS속성을 적용 및 제거하기 **/
         const divElement = document.querySelector("div")
-        console.log(window.getComputedStyle(divElement).backgroundColor)
-        console.log(window.getComputedStyle(divElement).border)
+        divElement.setAttribute("id", "bar")
+        divElement.classList.toggle("foo")
     </script>
 </body>
 </html>

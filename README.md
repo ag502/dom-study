@@ -232,3 +232,7 @@ CSSStyleDeclaration 개체의 `cssText` 속성과 `getAttribute()` 및 `setAttri
 ## 6-4 `getComputedStyle()`을 사용하여 element의 계산된 스타일(계층화된 것을 포함한 실제 스타일) 가져오기
 
 element의 계층화된 CSS(인라인 스타일시트, 외부 스타일시트, 브라우저 스타일 시트...)를 가져오려면 `window.getComputedStyle()`을 이용해야 한다.
+
+## 6-5 `class` 및 `id` attribute를 사용하여 element의 CSS속성을 적용 및 제거하기
+
+인라인 스타일시트나, 외부 스타일시트에 정의된 스타일 규칙은 `class` 및 `id` attribute를 사용하여 element에 추가하거나 제거할 수 있다.
