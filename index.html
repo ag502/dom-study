@@ -5,101 +5,64 @@
     <title>Element 노드</title>
 </head>
 <body>
-<!--    <a href="#">Hi</a>-->
-    <a href="#" title="title"  data-foo="dataFoo" class="yes no" style="margin:0;" foo="boo" hidden="hidden" goo>#link</a>
-    <input type="checkbox" checked/>
+    <div>
+        <ul>
+            <li><strong>Hi</strong></li>
+            <li class="liClass">Hello</li>
+            <li class="liClass">big</li>
+            <li class="liClass">bad</li>
+            <li id="last">world</li>
+        </ul>
+    </div>
+    <ul>
+        <li class="liClass">Hello</li>
+    </ul>
     <script>
-        /** element 노드 개요 **/
-        // const anchor = document.querySelector("a")
-        // console.log(anchor.constructor)
-        // console.log(Object.keys(anchor))
-
-        /** ElementNode 생성 **/
-        // const $textArea = document.createElement("textarea")
-        // document.body.appendChild($textArea)
-        // console.log(document.querySelector("textarea"))
-
-        /** Element 태그의 이름 얻기 **/
-        // const $a = document.querySelector("a")
-        // console.log($a.tagName)
-        // console.log($a.nodeName)
-
-        /** Attributes 및 값에 대한 리스트/컬렉션 얻기 **/
-        // const attributes = document.querySelector("a").attributes;
-        // console.log(attributes)
-        // for (let i = 0; i < attributes.length; i++) {
-        //     console.log(`${attributes[i].nodeName} = ${attributes[i].nodeValue}`)
-        // }
-
-        /** Element의 Attribute 값 획득, 설정, 제거 **/
-        // const $a = document.querySelector("a")
+        /** 특정 element 노드 선택하기 **/
+        // console.log(document.querySelector("li").textContent)
+        // console.log(document.getElementById("last").textContent)
         //
-        // // 제거
-        // $a.removeAttribute("href")
-        // $a.removeAttribute("title")
-        // $a.removeAttribute("style")
-        // $a.removeAttribute("data-foo")
-        // $a.removeAttribute("class")
-        // $a.removeAttribute("foo")
-        // $a.removeAttribute("hidden")
-        //
-        // console.log($a.attributes)
-        //
-        // // 설정
-        // $a.setAttribute("href", "#")
-        // $a.setAttribute("title", "title")
-        // $a.setAttribute("style", "margin:0;")
-        // $a.setAttribute("data-foo", "dataFoo")
-        // $a.setAttribute("class", "yes no")
-        // $a.setAttribute("foo", "boo")
-        // $a.setAttribute("hidden", "hidden")
-        //
-        // console.log($a.attributes)
-        //
-        // // 가져오기
-        // console.log($a.getAttribute("href"))
-        // console.log($a.getAttribute("title"))
-        // console.log($a.getAttribute("style"))
-        // console.log($a.getAttribute("data-foo"))
-        // console.log($a.getAttribute("class"))
-        // console.log($a.getAttribute("foo"))
-        // console.log($a.getAttribute("hidden"))
+        // const ulElement = document.querySelector("ul")
+        // console.log(ulElement.querySelector("li").textContent)
 
-        /** Element가 특정 attribute를 가지고 있는지 확인하기 **/
-        // const $a = document.querySelector("a")
-        // console.log(
-        //     $a.hasAttribute("href"),
-        //     $a.hasAttribute("id"),
-        //     $a.hasAttribute("goo")
-        // )
-        // console.log(document.querySelector("input").hasAttribute("checked"))
-
-        /** Class Attribute 값 리스트 얻기 **/
-        // const $a = document.querySelector("a")
-        // console.log($a.classList)
-        // console.log($a.getAttribute("class"))
-        // console.log($a.className)
-
-        /** Class Attribute에 하위 값 추가 및 제거, 토클, 확인 **/
-        // const $a = document.querySelector("a")
-        // $a.classList.add("neutral")
-        // console.log($a.classList)
+        /** Element 노드 리스트 선택 및 생성하기 **/
+        // const ulElement = document.querySelector("ul")
         //
-        // $a.classList.remove("no")
-        // console.log($a.classList)
-        //
-        // $a.classList.toggle("no")
-        // console.log($a.classList)
-        // $a.classList.toggle("yes")
-        // console.log($a.classList)
-        //
-        // console.log($a.classList.contains("hi"))
+        // console.log(document.querySelectorAll("li"))
+        // console.log(document.getElementsByTagName("li"))
+        // console.log(document.getElementsByClassName("liClass"))
+        // console.log(ulElement.childNodes)
 
-        /** dataset attribute 가져오고 설정하기 **/
-        const $a = document.querySelector("a")
-        console.log($a.dataset.foo)
+        /** 직계 자식 Element 노드를 모두 선택하기 **/
+        // const ulElement = document.querySelector("ul")
+        // console.log(ulElement.children)
+        //
+        // Array.from(ulElement.children).forEach(elementNode => {
+        //     console.log(elementNode)
+        //     console.log(elementNode.getAttribute("class"))
+        // })
 
-        $a.dataset.gooGoo = "goo"
+        /** 컨텍스트 기반 Element 선택 **/
+        // const divElement = document.querySelector("div")
+        //
+        // console.log(document.querySelectorAll("ul"))
+        // console.log(divElement.querySelectorAll("ul"))
+        //
+        // console.log(document.querySelectorAll("li"))
+        // console.log(divElement.querySelectorAll("li"))
+        //
+        // console.log(document.getElementsByTagName("li"))
+        // console.log(divElement.getElementsByTagName("li"))
+        //
+        // console.log(document.getElementsByClassName("liClass"))
+        // console.log(divElement.getElementsByClassName("liClass"))
+
+        /** 선택된 Element 검증 **/
+        const liElement = document.querySelectorAll("li")
+
+        Array.from(liElement).forEach((elementNode) => {
+            console.log(elementNode.matches("div li:first-child"))
+        })
     </script>
 </body>
 </html>
