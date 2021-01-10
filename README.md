@@ -283,3 +283,10 @@ window, element, document 모두 `addEventListener()` 사용가능하며, `addEv
 
 `stopImmediatePropagation()`을 호출하면, 이벤트 흐름 단계를 중지시키는 것(`stopPropagation()`)뿐만 아니라 `stopPropagation()`메서드를 호출한 이벤트 수신기 이후에 연결되어 <br>
 호출되는 이벤트 대상의 다른 유사한 이벤트도 중지시킨다.
+
+## 11-12 사용자 정의 이벤트
+
+`addEventListener()`와 `document.createEvent()`, `initCustomEvent()`, `dispatchEvent()`와 조합해서 사용하면 사용자 정의 이벤트를 연결해 호출할 수 있다.
+
+  > document.createEvent('CustomEvent')
+  > event.initCustomEvent(eventName, bubble?, cancelable?, event.detail)

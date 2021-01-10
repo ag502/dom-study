@@ -114,23 +114,36 @@
         // })
 
         /** stopImmediatePropagation()을 사용하여 이벤트 흐름 중지시키기 **/
-        document.querySelector("div").addEventListener("click", function() {
-            console.log('me too, but nothing from the event flow!')
+       //  document.querySelector("div").addEventListener("click", function() {
+       //      console.log('me too, but nothing from the event flow!')
+       //  })
+       //
+       //  document.querySelector("div").addEventListener("click", function(event) {
+       //      console.log("invoke all click events attached, but cancel capture and bubble event phases")
+       //      event.stopImmediatePropagation()
+       //  })
+       //
+       //  // stopImmediatePropagation 이후의 모든 이벤트 취소소
+       // document.querySelector("div").addEventListener("click", function() {
+       //      console.log('me too, but nothing from the event flow!')
+       //  })
+       //
+       //  document.body.addEventListener("click", function() {
+       //      console.log("What, denied from being invoked!")
+       //  })
+        /** 사용자 정의 이벤트 **/
+        const divElement = document.querySelector("div")
+        // 이벤트 생성
+        const cheer = document.createEvent("CustomEvent")
+        // 사용자 정의 이벤트에 대한 수신기 생성
+        divElement.addEventListener("goBigBlue", function (event) {
+            console.log(event.detail)
         })
+        // initCustomEvent
+        cheer.initCustomEvent("goBigBlue", true, false, {goBigBlueIs: 'its gone'})
 
-        document.querySelector("div").addEventListener("click", function(event) {
-            console.log("invoke all click events attached, but cancel capture and bubble event phases")
-            event.stopImmediatePropagation()
-        })
-
-        // stopImmediatePropagation 이후의 모든 이벤트 취소
-        document.querySelector("div").addEventListener("click", function() {
-            console.log('me too, but nothing from the event flow!')
-        })
-
-        document.body.addEventListener("click", function() {
-            console.log("What, denied from being invoked!")
-        })
+        // 호출
+        divElement.dispatchEvent(cheer)
     </script>
 </body>
 </html>
