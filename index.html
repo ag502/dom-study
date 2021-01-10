@@ -7,7 +7,7 @@
 <!--<body onclick="console.log('fire/trigger inline attribute event handler')">-->
 <body>
 <!--    <div>mouse over me</div>-->
-    <div>click me</div>
+    <span>click me</span>
     <script>
         /** DOM 이벤트 개요 **/
         // const divElement = document.querySelector("span")
@@ -80,11 +80,20 @@
         //     console.log("moving over document")
         // })
         /** 이벤트 개체에서 이벤트 속성 얻기 **/
-        document.querySelector("div").addEventListener("click", function(event) {
-            console.log(Object.keys(event))
-            Array.from(Object.keys(event)).forEach((item) => {
-                console.log(`${item} = ${event[item]}`)
-            })
+        // document.querySelector("div").addEventListener("click", function(event) {
+        //     console.log(Object.keys(event))
+        //     Array.from(Object.keys(event)).forEach((item) => {
+        //         console.log(`${item} = ${event[item]}`)
+        //     })
+        // })
+        /** addEventListener() 사용 시 this의 값 **/
+        // document.body.addEventListener("click", function(event) {
+        //     console.log(this)
+        //     console.log(event.currentTarget)
+        // })
+        /** 이벤트가 호출된 노드나 개체가 아닌 이벤트의 대상 참조 **/
+        document.body.addEventListener("click", function(event) {
+            console.log(event.target)
         })
     </script>
 </body>
