@@ -214,3 +214,8 @@ element 노드에서 `children` 속성을 사용하면, element 노드의 직계
 ## 4-6 선택된 Element를 검증하기 위해 matches()를 사용하기
 
 `matches()` 메서드를 사용하면 element가 selector 문자열에 들어맞는지를 판별할 수 있다.
+
+## 6-1 style attribute(element 인라인 CSS 속성) 개요
+
+모든 HTML element는 해당 element에 한정된 인라인 CSS 속성을 넣는 데 사용할 수 있는 style attribute를 가진다.
+  > style 속성은 문자열이 아닌 CSSStyleDeclaration 개체를 반환하며, 인라인 스타일만 반영
